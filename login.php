@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Login</title>
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/validform.js"></script>
   </head>
   <body>
       <div class="container">
@@ -67,7 +68,7 @@
                     </ul>
                 </div> <!-- FIM: social-media-->
                 <p class="description" style="color: #95a5a6;"> ou use sua conta de e-mail: </p>
-                <form class="form"> 
+                <form class="form" method="POST" action="http://localhost/DealerTech/php/salva_mensagem.php"> 
                     <label for="" class="label-input icon-modify">
                         <i class="far fa-envelope"></i>
                         <input type="email" placeholder=" Email" style="box-shadow: 0 0 0 0;outline: 0;">

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Cadastro</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="text/javascript" href="js/validform.js">
   </head>
   <body>
       <div class="container">
@@ -13,7 +14,7 @@
                 <h2 class="title" style="color: #fff;"> Bem-vindo de Volta!</h2>
                 <p class="description"> Para se manter conectado conosco </p>
                 <p class="description"> por favor faça o login com suas informações pessoais </p>
-                <button class="btn"> Entrar </button>
+                <button class="btn" type="submit" onclick="return ValidForm1()"> Entrar </button>
             </div> 
             <!--coluna 2-->
             <div class="second-culum"> 
@@ -25,21 +26,21 @@
                     </ul>
                 </div> <!-- FIM: social-media-->
                 <p class="description" style="color: #95a5a6;"> ou use seu e-mail para registro: </p>
-                <form class="form">
+                <form class="form" method="POST" action="http://localhost/DealerTech/php/salva_mensagem.php">
                     <!-- ICONES REDES SOCIAIS E INPUT-->
                     <label for="" class="label-input"> 
-                        <input type="text" placeholder="Nome">
+                        <input id="caixa" type="text" placeholder="Nome" name="nome">
                         <i class="far fa-user icon-modify"></i>
                     </label>
                     <label for="" class="label-input"> 
                         <i class="far fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">                      
+                        <input id="caixa" type="email" placeholder="Email" name="email">                      
                     </label>
                     <label for="" class="label-input "> 
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Senha">  
+                        <input id="caixa" type="password" placeholder="Senha" name="senha">  
                     </label>
-                    <button class="btn2"> Inscrever-se </button>
+                    <button class="btn2" type="submit" onclick="return ValidForm1()" value="Inscreva-se">Inscreva-se</button> 
                 </form>
             </div> <!-- FIM: second colum-->
         </div> <!--FIM: first content-->
@@ -67,21 +68,21 @@
                     </ul>
                 </div> <!-- FIM: social-media-->
                 <p class="description" style="color: #95a5a6;"> por favor, informe os seguintes dados</p>
-                <form class="form"> 
+                <form class="form" method="POST" action="http://localhost/DealerTech/php/salva_mensagem.php"> 
                     <label for="" class="label-input icon-modify">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="Nome" style="box-shadow: 0 0 0 0;outline: 0;">
+                        <input id="caixa" type="text" placeholder="Nome" style="box-shadow: 0 0 0 0;outline: 0;" name="nome">
                     </label>
                     <label for="" class="label-input icon-modify">
                         <i class="far fa-envelope"></i>
-                        <input type="email" placeholder=" Email" style="box-shadow: 0 0 0 0;outline: 0;">
+                        <input id="caixa" type="email" placeholder=" Email" style="box-shadow: 0 0 0 0;outline: 0;" name="email">
                     </label>
                     <label for="" class="label-input icon-modify">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder=" Senha" style="box-shadow: 0 0 0 0;outline: 0;">
+                        <input id="caixa" type="password" placeholder=" Senha" style="box-shadow: 0 0 0 0;outline: 0;" name="senha">
                     </label>
                     
-                    <button class="btn2" style="transition: 0.25s;"> Inscreva-se </button>
+                    <button class="btn2" style="transition: 0.25s;" type="submit" onclick="return ValidForm1()">Inscreva-se</button>  
                 </form>
             </div> <!-- FIM: second colum-->
         </div> <!-- FIM: second content-->
