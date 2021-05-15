@@ -91,10 +91,5 @@ session_start();
          </p>
         </div>
         </center>
-
-            
-        
-        
-
     </body>	
 </html>
