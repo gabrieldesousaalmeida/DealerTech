@@ -63,6 +63,7 @@ body {
     z-index: 1;
 }
 .second-culumn{
+    height: 100%;
     flex: 2 0 auto;
     text-align: center;
     display: flex;

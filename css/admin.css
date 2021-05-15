@@ -1,0 +1,59 @@
+h2{
+    text-align: center;
+    color:red;
+    text-shadow: -1px -1px white, 1px 1px #333;
+} 
+.botao  {
+    margin:0px;
+    padding:0px;
+}
+.botao a {  
+    font: bold 12px/24px 'Times New Roman', Times, serif;	
+    padding:0px;
+    text-decoration: none;
+    text-align:center;	
+    color:lavender;
+    background: red url('botao_link.gif')
+    no-repeat center center;	
+    width: 200px;  
+    height: 50px;	
+    display:block;
+    border-radius: 0px;
+    border-width: 2px;
+    border-style:solid;
+    border-color:red;
+    font-size: 20px;
+}
+.botao a:hover { 
+    background: #fff url('botao_hover.gif') no-repeat 
+    center center;
+    color:red;
+    transition: 0.4s;
+}
+.botao2  {
+    margin:0px;
+    padding:0px;
+}
+.botao2 a {  
+    font: bold 12px/24px 'Times New Roman', Times, serif;	
+    padding:0px;
+    text-decoration: none;
+    text-align:center;	
+    color:lavender;
+    background: rgb(172, 4, 4) url('botao_link.gif')
+    no-repeat center center;	
+    width: 200px;  
+    height: 50px;	
+    display:block;
+    border-radius: 0px;
+    border-width: 2px;
+    border-style:solid;
+    border-color: rgb(172, 4, 4);
+    font-size: 20px;
+}
+.botao2 a:hover { 
+    background: #fff url('botao_hover.gif') no-repeat 
+    center center;
+    color:rgb(172, 4, 4);
+    transition: 0.4s;
+}

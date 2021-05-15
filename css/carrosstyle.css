@@ -1,0 +1,297 @@
+
+.slider {
+    display: block;
+    height: 293px;
+    width: 600px;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.slider li {
+    list-style: none;
+    position: absolute;
+}
+
+.slider img {
+    margin: auto;
+    height: 200px;
+    width: 54%;
+    vertical-align: top;
+    border-radius: 5px;
+    border: 1px solid gray;
+
+}
+.slider input {
+    display: none;
+}
+.slider label {
+    background-color:#fff;
+    bottom: 10px;
+    cursor: pointer;
+    display: block;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+    z-index: 10;
+    border-radius: 30px;
+    box-shadow:2px 2px 1px rgba(50, 50, 50, 0.77);
+}
+
+.slider li:nth-child(1) label {
+    left: 10px;
+}
+
+.slider li:nth-child(2) label {
+    left: 40px;
+}
+
+.slider li:nth-child(3) label {
+    left: 70px;
+}
+.slider li:nth-child(4) label {
+    left: 100px;
+}
+.slider li:nth-child(5) label {
+    left: 130px;
+}
+.slider li:nth-child(6) label {
+    left: 160px;
+}
+.slider img {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.slider li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+.carro{
+    background:rgb(219, 219, 219);
+    width:300px;
+    height: 550px;
+    margin-left: 60px;
+    border-radius: 15px;
+    display: inline-block;
+}
+h7{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    color: rgb(104, 104, 104);
+    text-transform: uppercase;
+}
+h8{
+    font-size: 15px;
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+}
+ h10{
+    font-size: 25px;
+    color:rgb(104, 104, 104);
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+}
+ h11{
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+}
+ 
+.edils li:nth-child(1) label {
+    left: 190px;
+}
+
+.edils li:nth-child(2) label {
+    left: 40px;
+}
+
+.edils li:nth-child(3) label {
+    left: 70px;
+}
+.edils li:nth-child(4) label {
+    left: 100px;
+}
+.edils li:nth-child(5) label {
+    left: 130px;
+}
+.edils li:nth-child(6) label {
+    left: 160px;
+}
+.edils img {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.edils li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+.carro2{
+    background:rgb(219, 219, 219);
+    width:300px;
+    height: 550px;
+    margin-left: 20px;
+    border-radius: 15px;
+}
+/*..............................................................................................*/
+.edils {
+    display: block;
+    height: 293px;
+    width: 600px;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.edils li {
+    list-style: none;
+    position: absolute;
+}
+
+.edils img {
+    margin: auto;
+    height: 200px;
+    width: 54%;
+    vertical-align: top;
+    border-radius: 5px;
+    border: 1px solid gray;
+
+}
+.edils input {
+    display: none;
+}
+.edils label {
+    background-color:#fff;
+    bottom: 10px;
+    cursor: pointer;
+    display: block;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+    z-index: 10;
+    border-radius: 30px;
+    box-shadow:2px 2px 1px rgba(50, 50, 50, 0.77);
+}
+
+.slider li:nth-child(1) label {
+    left: 10px;
+}
+
+.slider li:nth-child(2) label {
+    left: 40px;
+}
+
+.slider li:nth-child(3) label {
+    left: 70px;
+}
+.slider li:nth-child(4) label {
+    left: 100px;
+}
+.slider li:nth-child(5) label {
+    left: 130px;
+}
+.slider li:nth-child(6) label {
+    left: 160px;
+}
+.edils img {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.edils li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+.carro{
+    background:rgb(219, 219, 219);
+    width:300px;
+    height: 550px;
+    margin-left: 20px;
+    border-radius: 15px;
+}
+
+/*carro 3*/
+.edilss li:nth-child(1) label {
+    left: 190px;
+}
+
+.edilss li:nth-child(2) label {
+    left: 40px;
+}
+
+.edilss li:nth-child(3) label {
+    left: 70px;
+}
+.edilss li:nth-child(4) label {
+    left: 100px;
+}
+.edilss li:nth-child(5) label {
+    left: 130px;
+}
+.edilss li:nth-child(6) label {
+    left: 160px;
+}
+.edilss img {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.edilss li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+.edilss {
+    display: block;
+    height: 293px;
+    width: 600px;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.edilss li {
+    list-style: none;
+    position: absolute;
+}
+
+.edilss img {
+    margin: auto;
+    height: 200px;
+    width: 54%;
+    vertical-align: top;
+    border-radius: 5px;
+    border: 1px solid gray;
+
+}
+.edilss input {
+    display: none;
+}
+.edilss label {
+    background-color:#fff;
+    bottom: 10px;
+    cursor: pointer;
+    display: block;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+    z-index: 10;
+    border-radius: 30px;
+    box-shadow:2px 2px 1px rgba(50, 50, 50, 0.77);
+}
+.edilss img {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.edilss li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+/*fim carro 3*/
