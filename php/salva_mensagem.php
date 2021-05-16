@@ -24,10 +24,24 @@
             header("Location: http://localhost/DealerTech/cadastro.php");
         }else if($niveis_acesso_id == "admin"){
             //email de solicitação
-
+            $to = "sagaveiculosdeluxo@gmail.com";
+            $subject = "Nova Solicitação de Conta Admin";
+            $headers = "From: sagaveiculosdeluxo@gmail.com\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            $message = '<html><body style="background-color: #808080;">';
+            $message .= '<center><h1>Saga Veiculos de Luxo<br>';
+            $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+            $message .= "<tr style='background: white;'><td><strong>Nome:</strong> </td><td>".$nome."</td></tr>";
+            $message .= "<tr><td><strong>Email:</strong> </td><td style='text-decoration: none';>".$email."</td></tr>";
+            $message .= "</table><br><a href='http://localhost/DealerTech/admin/cadastro_admin.php'><button>Cadastrar Email como Admin</button></a></center></body></html>";
             //mensagem tela de login
-            $_SESSION['loginErro'] = "Solicitação Enviada<br>Aguarde resposta";
-            header("Location: http://localhost/DealerTech/cadastro.php"); 
+            if(mail($to,$subject,$message,$headers)){
+                $_SESSION['loginErro'] = "Solicitação Enviada<br>Aguarde resposta";
+                header("Location: http://localhost/DealerTech/cadastro.php");
+            }else{
+                $_SESSION['loginErro'] = "Solicitação não foi Enviada<br>Aguarde resposta";
+                header("Location: http://localhost/DealerTech/cadastro.php");
+            } 
         }else{
             //Inserir na tabela
             $result_usuario = "INSERT INTO clientes (nome, email, senha,niveis_acesso_id, created) VALUES ('$nome', '$email', '$senha','$niveis_acesso_id', NOW())";
