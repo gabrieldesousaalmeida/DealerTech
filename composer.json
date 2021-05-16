@@ -14,7 +14,12 @@
     "config": {
         "vendor-dir": "vendor"
     },
-    "require": {
-        "phpmailer/phpmailer": "6.0.*"
+    "autoload": {
+        "psr-4": {
+            "lib\\": "lib/"
+        },            
+        "files": [
+            "lib/config.php"
+        ]
     }
 }
