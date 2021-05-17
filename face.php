@@ -1,12 +1,12 @@
 <?php 
 session_start();
 unset($_SESSION['face_access_token']);
-require_once('http://localhost/DealerTech/lib/Facebook/autoload.php');
-include_once('conexao.php');
+require_once('lib/facebook/autoload.php');
+include_once('php/conexao.php');
 $fb = new \Facebook\Facebook([
-  'app_id' => '466869461267354',
-  'app_secret' => '1e8736d960a42eff990bde762bb9844d',
-  'default_graph_version' => 'v2.9',
+  'app_id' => '1411342342575035',
+  'app_secret' => '13c6ca487eaabeb8e3ebfe6dda7e16c8',
+  'default_graph_version' => 'v10.0',
   //'default_access_token' => '{access-token}', // optional
 ]);
 
@@ -32,10 +32,10 @@ try {
 }
 
 if (! isset($accessToken)) {
-	$url_login = 'http://localhost/DealerTech/php/face.php';
+	$url_login = 'http://localhost/DealerTech/face.php';
 	$loginUrl = $helper->getLoginUrl($url_login, $permissions);
 }else{
-	$url_login = 'http://localhost/DealerTech/php/face.php';
+	$url_login = 'http://localhost/DealerTech/face.php';
 	$loginUrl = $helper->getLoginUrl($url_login, $permissions);
 	//Usuário ja autenticado
 	if(isset($_SESSION['face_access_token'])){
@@ -60,7 +60,7 @@ if (! isset($accessToken)) {
 			$_SESSION['id'] = $row_usuario['id'];
 			$_SESSION['nome'] = $row_usuario['nome'];
 			$_SESSION['email'] = $row_usuario['email'];
-			header("Location: administrativo.php");			
+			header("Location: php/administrativo.php");			
 		}
 	} catch(Facebook\Exceptions\FacebookResponseException $e) {
 		echo 'Graph returned an error: ' . $e->getMessage();
