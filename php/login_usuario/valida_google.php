@@ -11,7 +11,8 @@ if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
 	$row_usuario = mysqli_fetch_assoc($resultado_usuario);
 	$userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
 	$_SESSION['id'] = $row_usuario['id'];
-	$_SESSION['nome'] = $row_usuario['nome'];
+	$_SESSION['usuarioNome'] = $row_usuario['nome'];
+	$_SESSION['usuarioNiveisAcessoId'] = $row_usuario['niveis_acesso_id'];
 	$resultado = 'http://localhost/DealerTech/index.php';
 	echo $resultado;
 }else{//Nenhum usuário encontrado

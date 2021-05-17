@@ -6,7 +6,8 @@
 		$_SESSION['usuarioNome'],
 		$_SESSION['usuarioNiveisAcessoId'],
 		$_SESSION['usuarioEmail'],
-		$_SESSION['usuarioSenha']
+		$_SESSION['usuarioSenha'],
+		$_SESSION['face_access_token']
 	);
 	
 	$_SESSION['logindeslogado'] = "Deslogado com sucesso";

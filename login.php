@@ -11,9 +11,9 @@
 		<link href="css/signin.css" rel="stylesheet">
         <script type="text/javascript" src="http://localhost/DealerTech/js/face.js"></script>
         <!--<link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">-->
-        <meta name="google-signin-scope" content="profile email">
-        <meta name="google-signin-client_id" content="185976890928-n2klo3dp7v3foalnjdpfunvgku1oluef.apps.googleusercontent.com">
         <script src="https://apis.google.com/js/platform.js" async defer></script>
+		<meta name="google-signin-client_id" content="185976890928-n2klo3dp7v3foalnjdpfunvgku1oluef.apps.googleusercontent.com">
+        
         <div id="fb-root"></div>
     </head>
     <body>
@@ -31,10 +31,15 @@
                 <div class="second-culumn"> 
                     <h2 class="title" style="color: red;"> Entrar </h2>
                     <div class="social-media">
-                        <ul>
-                        <fb:login-button scope="public_profile,email" data_size="small"onlogin="checkLoginState();">
-                        </fb:login-button>
-                            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="red"></div>
+                        <ul class="list-social-media">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <span class="g-signin2" data-onsuccess="onSignIn" style="margin-top: 20px;"></span>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <a href="<?php echo $loginUrl; ?>">
+                                    <img src="http://localhost/DealerTech/Imagens/facebook.png" height="39px;">
+                                </a>
+                            </div>	
                         </ul>
                     </div> <!-- FIM: social-media-->
                     <p class="description" style="color: #95a5a6;"> ou use sua conta de e-mail:<br>
@@ -97,5 +102,6 @@
 		}
         </script>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     </body>
 </html>
