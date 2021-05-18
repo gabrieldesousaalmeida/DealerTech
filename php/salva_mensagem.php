@@ -4,11 +4,13 @@
     $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
-    $niveis_acesso_id = filter_input(INPUT_POST, 'niveis_acesso_id', FILTER_SANITIZE_STRING);
+    $niveis_acesso_id = "cliente";
     //Verificar se existe no banco
     if((isset($_POST['email'])) && (isset($_POST['senha']))){
 		$usuario = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     	$senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
+        
+        $_SESSION['redirecionar']="red";
 			
 		//Buscar na tabela usuario o usuário que corresponde com os dados digitado no formulário
 		$result_usuario = "SELECT * FROM clientes WHERE email = '$usuario' LIMIT 1";
@@ -46,9 +48,12 @@
             //Inserir na tabela
             $result_usuario = "INSERT INTO clientes (nome, email, senha,niveis_acesso_id, created) VALUES ('$nome', '$email', '$senha','$niveis_acesso_id', NOW())";
             $resultado_usuario = mysqli_query($conn, $result_usuario);
-                
-            $_SESSION['loginErro'] = "Cadastro Feito, agora faça o login";
-            header("Location: http://localhost/DealerTech/login.php");
+
+            $_SESSION['usuarioNome'] = $nome;
+            $_SESSION['usuarioNiveisAcessoId'] = $niveis_acesso_id;
+            $_SESSION['loginErro'] = "Agora acesse sua caixa de entrada do email, procure por 'confirmação de email sagaveiculosdeluxo', abra e confirme seu cadastro!";
+            header("Location: http://localhost/DealerTech/cadastro.php");
+            
         }
     }
 ?>

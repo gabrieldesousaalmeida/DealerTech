@@ -85,10 +85,6 @@ function ValidForm1() {
    alert('Campo senha está vazio ou senha é menor do que 8 dígitos');
    dados.senha.focus();
    return false;
- } else if (senha.length >8) {
-   alert('Campo senha é maior do que 8 dígitos');
-   dados.senha.focus();
-   return false;
  }else {
    
  }
@@ -104,8 +100,6 @@ function ValidForm2() {
   } else if (senha == '' || senha.length <= 8) {
     alert('Campo senha está vazio ou senha é menor do que 8 caracteres');
     dados.senha.focus();  
-  } else if(senha.length >= 8){
-    alert('Campo senha é maior do que 8 caracteres')
   }else {
     alert('Login realizado com sucesso! Bem vindo novamente jovem padawan, que a força esteja com você.');
   }

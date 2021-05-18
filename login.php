@@ -1,5 +1,5 @@
 <?php
-    include_once 'face.php';
+    include_once 'php/login_usuario/face.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/signin.css" rel="stylesheet">
+        <link href="css/stylebtn2.css" rel="stylesheet">
         <script type="text/javascript" src="http://localhost/DealerTech/js/face.js"></script>
         <!--<link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">-->
         <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -36,9 +37,9 @@
                                 <span class="g-signin2" data-onsuccess="onSignIn" style="margin-top: 20px;"></span>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <a href="<?php echo $loginUrl; ?>">
-                                    <img src="http://localhost/DealerTech/Imagens/facebook.png" height="39px;">
-                                </a>
+                                <p class="botao">
+                                    <a href="<?php echo $loginUrl; ?>" title=""> <i class="fab fa-facebook-f" style="color: blue; width: 30px; heigth: 200px;"></i>   Facebook </a>
+                                </p>
                             </div>	
                         </ul>
                     </div> <!-- FIM: social-media-->
