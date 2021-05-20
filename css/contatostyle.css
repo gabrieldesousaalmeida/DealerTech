@@ -90,3 +90,31 @@ h2{
     color:blue;
     transition: 0.4s;
 }
+
+.botao4  {
+    margin:0px;
+    padding:0px;
+}
+.botao4 a {  
+    font: bold 12px/24px 'Times New Roman', Times, serif;	
+    padding:0px;
+    text-decoration: none;
+    text-align:center;	
+    color: lavender;
+    background: rgb(170, 170, 4) url('botao_link.gif')
+    no-repeat center center;	
+    width: 370px;  
+    height: 28px;	
+    display:block;
+    border-radius: 2px;
+    border-width: 2px;
+    border-style:solid;
+    border-color: rgb(170, 170, 4);
+    font-size: 25px;
+}
+.botao4 a:hover { 
+    background: #fff url('botao_hover.gif') no-repeat 
+    center center;
+    color: rgb(170, 170, 4);
+    transition: 0.4s;
+}

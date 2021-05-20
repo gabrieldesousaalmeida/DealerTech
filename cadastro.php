@@ -51,18 +51,24 @@
                 <!-- Modal -->
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
                 <?php
+                $red="a";
                 if(isset($_SESSION['redirecionar'])){
                     $red = $_SESSION['redirecionar'];
                 }else{
                     $red="";
                 }
-			        if($red == "red"){ ?>
+			    if($red == "red"){ ?>
 				<script>
 					$(document).ready(function(){
 						$('#meuModal').modal('show');
 					});
 				</script>
-			    <?php } ?>
+			    <?php 
+                } 
+                unset(
+                    $_SESSION['redirecionar']
+                );
+                ?>
                 <div class="modal fade" id="meuModal" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">

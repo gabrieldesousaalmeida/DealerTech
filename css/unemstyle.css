@@ -1,10 +1,17 @@
+#centro{
+    display: inline-block;
+    margin-left: 500px;
+    margin-right: -500px;
+    margin-top: 39%;
+}
 body{
     margin: 0;
     padding: 0;
     justify-content: center;
     align-items: center; 
     background: lavender;
-    }
+
+}
 ul{
     margin: 0;
     padding: 0;
@@ -21,27 +28,16 @@ ul li a {
     text-decoration: none;
     padding: 5px;
     font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
     color: #fff;
     text-transform: uppercase;
     transition: .5s;
-}
-ls{
-    display: block;
-    position: relative;
-    text-decoration: none;
-    padding: 5px;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    color: #fff;
-
 }
 ul:hover li a{
     transform: scale(1.0);
     opacity: .5;
     filter: blur(1px);
 }
-
 ul li a:hover{
     transform: scale(2);
     opacity: 1;
@@ -49,10 +45,56 @@ ul li a:hover{
 }
 .menu{
     background: linear-gradient(rgb(168, 2, 2), rgb(109, 2, 2));
-    float: right;
-    position: fixed; 
-    top: 0%; 
-    width:100%;
-    height: 35px;
     box-shadow: rgb(49, 48, 48) 0px 3px 19px;
 }
+.divimage{
+    background-image: url(http://localhost/DealerTech/Imagens/gg.png);
+    height: 648px;    
+}
+.botao  {
+    padding:0px;
+    }
+    .botao a {  
+        font: bold 12px/24px Century Gothic, CenturyGothic, AppleGothic, sans-serif;	
+        padding:0px;
+        text-decoration: none;
+        text-align:center;	
+        color:#fff;
+        background: rgba(0, 0, 255, 0) url('botao_link.gif')
+        no-repeat center center;	
+        width: 150px;  
+        height: 67px;	
+        display:block;
+        border-radius: 2px;
+        border-width: 0.0px;
+        border-style:solid;
+        border-color: #fff;
+        font-size: 18px;
+	    }
+        .botao a:hover { 
+            background: rgba(255, 255, 255, 0.144) url('botao_hover.gif') no-repeat 
+            center center;
+            transition: 0.2s;
+        }
+        h1 {
+            color: red;
+            font-size: 60px;
+            text-align: center;
+            text-shadow: 0 1px 0 #ccc,
+            0 2px 0 #c9c9c9,
+            0 3px 0 #bbb,
+            0 4px 0 #b9b9b9,
+            0 5px 0 #aaa,
+            0 6px 1px rgba(0,0,0,.1),
+            0 0 5px rgba(0,0,0,.1),
+            0 1px 3px rgba(0,0,0,.3),
+            0 3px 5px rgba(0,0,0,.2),
+            0 5px 10px rgba(0,0,0,.25),
+            0 10px 10px rgba(0,0,0,.2),
+            0 20px 20px rgba(0,0,0,.15);
+            font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+         }
+         h2{
+            color: gray;
+            font-size: 20px;
+        }
