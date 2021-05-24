@@ -145,7 +145,7 @@ session_start();
     </div>
     <center>
           
-        <div style="margin-top:5rem;">
+        <div style="margin-top:2rem;">
          <h2 style="font-size: 3rem;"> Fale Conosco </h2>
          <p class="botao">
             <a href="https://wa.me/5585981544074?text=Ol%C3%A1%20empresa%20Saga%20Veiculos%20De%20Luxo!" title=""> <i class="fab fa-whatsapp"></i>  WhatsApp: <br> <br> (88) 9619-2654 </a>
@@ -226,7 +226,7 @@ session_start();
             ?>
         <!-- Modal 2 -->
 		<div class="modal fade" id="meuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="exampleModalLabel">Mensagem para @sagaveiculosdeluxo</h5>
@@ -245,7 +245,7 @@ session_start();
 		</div>
         <!-- Modal 3 -->
         <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="exampleModalLabel">Falha ao Abrir Formulário</h5>

@@ -3,7 +3,7 @@
     <head>
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <title>Estoque</title>
+        <title>Eventos</title>
         <!--Google Charts-->
         <script src="https://www.gstatic.com/charts/loader.js"></script>
         <script src="http://localhost/DealerTech/js/barras1.js"></script>
@@ -259,10 +259,10 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
                     <a href="http://localhost/DealerTech/index.php" class="nav_logo" style="color: white;"> <i class='fas fa-home'></i> <span class="nav_logo-name">Home</span> </a>
                     <div class="nav_list"> 
                         <a href="http://localhost/DealerTech/admin/admin.php" style="color: white;" class="nav_link "> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span></a>
-                        <a href="http://localhost/DealerTech/admin/estoque.php" style="color: white;"class="nav_link active"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Estoque</span> </a>
+                        <a href="http://localhost/DealerTech/admin/estoque.php" style="color: white;"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Estoque</span> </a>
                         <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style="color: white;" class="nav_link"> <i class='fas fa-car'></i> <span class="nav_name">Veículos</span> </a>
                         <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style="color: white;" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Usuários</span> </a>  
-                        <a href="http://localhost/DealerTech/admin/eventos.php" style="color: white;" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Eventos</span> </a>                         
+                        <a href="http://localhost/DealerTech/admin/eventos.php" style="color: white;" class="nav_link active"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Eventos</span> </a>                         
                         <a href="http://localhost/DealerTech/admin/vendas.php" style="color: white;" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Vendas</span> </a>
                         <a href="http://localhost/DealerTech/admin/gerenciar_promocoes.php" style="color: white;" class="nav_link"> <i class='fas fa-money-bill'></i> <span class="nav_name">Promoções</span> </a>
                         <div class="esp" style="height: 3rem;"></div>
@@ -274,15 +274,17 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
         <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>
         <!--Conteúdo da página-->
         <div>
-            <h3>Estoque</h3>
+            <h3>Eventos</h3>
+            <br>
             <div class="row">
-                <div class="col">
-                    Teste
+                <div class="col-md-6 col-sm-12">
+                    teste
                 </div>
-                <div class="col">
+                <div class="col-md-6 col-sm-12">
                     Teste
                 </div>
             </div>
+            <br><br>
             <!--Próxima aba-->
         </div>
         <!--Conteúdo da página-->

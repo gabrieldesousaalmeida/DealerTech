@@ -1,81 +1,300 @@
-<?php
-session_start();
-$tipo = $_SESSION['usuarioNiveisAcessoId'];
-?>
-<!DOCTYPE html>
-<html lang="pt-br"> 
-    <head>	
-        <meta charset="utf-8"/>	
-        <title>Opções Administrativas</title>
-        
-        <link rel="apple-touch-icon" sizes="180x180" href="http://localhost/DealerTech/Imagens/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="http://localhost/DealerTech/Imagens/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="http://localhost/DealerTech/Imagens/favicon-16x16.png">
-        <link rel="manifest" href="http://localhost/DealerTech/Imagens/site.webmanifest">
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>Área Administrativa</title>
+        <!--Google Charts-->
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="http://localhost/DealerTech/js/barras1.js"></script>
+        <script src="http://localhost/DealerTech/js/barras2.js"></script>
+        <script src="http://localhost/DealerTech/js/barras3.js"></script>
+        <!--/Google Charts-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+        <style>@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
-        <link href="http://localhost/DealerTech/css/unemstyle.css" rel="stylesheet">	
-        <link href="http://localhost/DealerTech/css/admin.css" rel="stylesheet">
-        <style>
-            #centro{
-            display: inline-block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        #centro2{
-            display: inline-block;
-        }
-        .oa{
-            margin-left: 24%;
-        }
-        .sair{
-            margin-left: 0%;
-        }
-        .sair1{
-            margin-left: 28%;
-        }
-        </style>
-    </head>	
-    <body>	
-        <div class="menu">
-            <ul class=>
-                <li> <a href="#" style="color: rgba(117, 2, 2, 0);"> </a></li> <!--Programação Orientada a Gambiarra-->
-                <li> <a href="http://localhost/DealerTech/index.php" style="background: #fff; color:rgb(117, 2, 2); border-radius: 3px;" title="Página Inicial"> <i class="fas fa-home"> </i> Home </a></li>
-                <li> <a href="http://localhost/DealerTech/comprar.php" title="Compre o seu carro de luxo"> <i class="fas fa-dollar-sign"> </i> Comprar </a></li>
-                <li> <a href="http://localhost/DealerTech/carros.php" title="Conheça os veículos de luxo"> <i class="fas fa-car"></i> Carros </a></li>
-                <li> <a href="http://localhost/DealerTech/contatos.php" title="Entre em Contato Conosco"> <i class="fas fa-phone-alt"></i> Contatos </a></li>
-                <li> <a href="http://localhost/DealerTech/sobre.php" title="Conheça a Empresa Saga Veículos de Luxo"> <i class="fas fa-clipboard"></i> Sobre Nós </a></li>
-                <li id="centro2" class="sair1"><a href="http://localhost/DealerTech/php/login_usuario/sair.php" title="Sair" style="font-size: 25px; margin-top: 0px;"><i class="fas fa-sign-out-alt"></i></a></li>
-            </ul>
-        </div>
-        </div>
-         <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>
-         <center>
-         <br> <br> <br> <br> <br> <br> <h2 style="font-size: 50px;"> Por favor, Selecione uma das opções: </h2>
-         <div style="background: rgba(255, 255, 255, 0); height: 350px; width: 900px;border-radius: 15px; display: flex;margin-left: -350px;">
-         <p class="botao">
-            <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" title=""> <i class="fas fa-wrench" style="font-size: 50px;"></i><i class="fas fa-truck-pickup"style="font-size: 50px;"></i> <br> <br> Gerenciar Veículos </a>
-         </p> <br> <br> <br>
-         <p class="botao2">
-            <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" title=""> <i class="fas fa-wrench" style="font-size: 50px;"></i><i class="fas fa-user-edit" style="font-size: 50px;"></i> <br> <br> Gerenciar Clientes </a>
-         </p> <br> <br> <br>
-         <p class="botao">
-            <a href="http://localhost/DealerTech/admin/gerenciar_promoções.php" title=""> <i class="fas fa-wrench"style="font-size: 50px;"><i class="fas fa-money-bill"style="font-size: 50px;"></i></i> <br> <br> Gerenciar Promoções </a>
-         </p>
-         <p class="botao2">
-            <a href="http://localhost/DealerTech/admin/estoque.php" title=""> <i class="fas fa-box-open"style="font-size: 50px;"> <i class="fas fa-pencil-alt"style="font-size: 50px;"></i></i> <br> <br> Estoque </a>
-         </p>
-         <p class="botao">
-            <a href="http://localhost/DealerTech/admin/relat_vendas.php" title=""> <i class="fas fa-clipboard-list"style="font-size: 50px;"></i> <i class="fas fa-search-dollar"style="font-size: 50px;"></i><br> <br> Controle de Vendas </a>
-         </p>
-         <p class="botao2">
-            <a href="http://localhost/DealerTech/admin/relat_reservas.php" title=""> <i class="fas fa-clipboard-list"style="font-size: 50px;"> </i> <i class="fas fa-pencil-alt"style="font-size: 50px;"> </i><br> <br> Controle de Reservas</a>
-         </p>
-        </div>
-        </center>
+:root {
+    --header-height: 3rem;
+    --nav-width: 68px;
+    --first-color: #4723D9;
+    --first-color-light: #AFA5D9;
+    --white-color: #F7F6FB;
+    --body-font: 'Nunito', sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100
+}
 
-            
-        
-        
+*,
+::before,
+::after {
+    box-sizing: border-box
+}
 
-    </body>	
+body {
+    position: relative;
+    margin: var(--header-height) 0 0 0;
+    padding: 0 1rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    transition: .5s
+}
+
+a {
+    text-decoration: none
+}
+
+.header {
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: #FFFFFF;
+    z-index: var(--z-fixed);
+    transition: .5s
+}
+
+.header_toggle {
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer
+}
+
+.header_img {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden
+}
+
+.header_img img {
+    width: 40px
+}
+
+.l-navbar {
+    position: fixed;
+    top: 0;
+    left: -30%;
+    width: var(--nav-width);
+    height: 100vh;
+    background: linear-gradient(black,#800000,#000);
+    padding: .5rem 1rem 0 0;
+    transition: .5s;
+    z-index: var(--z-fixed)
+}
+
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden
+}
+
+.nav_logo,
+.nav_link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    padding: .5rem 0 .5rem 1.5rem
+}
+
+.nav_logo {
+    margin-bottom: 2rem
+}
+
+.nav_logo-icon {
+    font-size: 1.25rem;
+    color: var(--white-color)
+}
+
+.nav_logo-name {
+    color: var(--white-color);
+    font-weight: 700
+}
+
+.nav_link {
+    position: relative;
+    color: var(--first-color-light);
+    margin-bottom: 1.5rem;
+    transition: .3s
+}
+
+.nav_link:hover {
+    color: var(--white-color)
+}
+
+.nav_icon {
+    font-size: 1.25rem
+}
+
+.show {
+    left: 0
+}
+
+.body-pd {
+    padding-left: calc(var(--nav-width) + 1rem)
+}
+
+.active {
+    color: var(--white-color)
+}
+
+.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: var(--white-color)
+}
+
+.height-100 {
+    height: 100vh
+}
+
+@media screen and (min-width: 768px) {
+    .esp{
+        height: 40%;
+    }
+    body {
+        margin: calc(var(--header-height) + 1rem) 0 0 0;
+        padding-left: calc(var(--nav-width) + 2rem)
+    }
+
+    .header {
+        height: calc(var(--header-height) + 1rem);
+        padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
+    }
+
+    .header_img {
+        width: 40px;
+        height: 40px
+    }
+
+    .header_img img {
+        width: 45px
+    }
+
+    .l-navbar {
+        left: 0;
+        padding: 1rem 1rem 0 0
+    }
+
+    .show {
+        width: calc(var(--nav-width) + 156px)
+    }
+
+    .body-pd {
+        padding-left: calc(var(--nav-width) + 188px)
+    }
+    .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+}</style>
+                                <script type='text/javascript' src=''></script>
+                                <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+                                <script type='text/javascript'>document.addEventListener("DOMContentLoaded", function(event) {
+
+const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+const toggle = document.getElementById(toggleId),
+nav = document.getElementById(navId),
+bodypd = document.getElementById(bodyId),
+headerpd = document.getElementById(headerId)
+
+// Validate that all variables exist
+if(toggle && nav && bodypd && headerpd){
+toggle.addEventListener('click', ()=>{
+// show navbar
+nav.classList.toggle('show')
+// change icon
+toggle.classList.toggle('bx-x')
+// add padding to body
+bodypd.classList.toggle('body-pd')
+// add padding to header
+headerpd.classList.toggle('body-pd')
+})
+}
+}
+
+showNavbar('header-toggle','nav-bar','body-pd','header')
+
+/*===== LINK ACTIVE =====*/
+const linkColor = document.querySelectorAll('.nav_link')
+
+function colorLink(){
+if(linkColor){
+linkColor.forEach(l=> l.classList.remove('active'))
+this.classList.add('active')
+}
+}
+linkColor.forEach(l=> l.addEventListener('click', colorLink))
+
+// Your code to run since DOM is loaded and ready
+});
+</script>
+</head>
+    <body oncontextmenu='return false' class='snippet-body'>
+    <body id="body-pd">
+        <header class="header" id="header">
+            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+            <div class="header_img"> <img src="http://localhost/DealerTech/Imagens/felipe.jfif" alt=""> </div>
+        </header>
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div> 
+                    <a href="http://localhost/DealerTech/index.php" class="nav_logo" style="color: white;"> <i class='fas fa-home'></i> <span class="nav_logo-name">Home</span> </a>
+                    <div class="nav_list"> 
+                        <a href="http://localhost/DealerTech/admin/admin.php" style="color: white;" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span></a>
+                        <a href="http://localhost/DealerTech/admin/estoque.php" style="color: white;"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Estoque</span> </a>
+                        <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style="color: white;" class="nav_link"> <i class='fas fa-car'></i> <span class="nav_name">Veículos</span> </a>
+                        <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style="color: white;" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Usuários</span> </a>  
+                        <a href="http://localhost/DealerTech/admin/eventos.php" style="color: white;" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Eventos</span> </a>                         
+                        <a href="http://localhost/DealerTech/admin/vendas.php" style="color: white;" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Vendas</span> </a>
+                        <a href="http://localhost/DealerTech/admin/gerenciar_promocoes.php" style="color: white;" class="nav_link"> <i class='fas fa-money-bill'></i> <span class="nav_name">Promoções</span> </a>
+                        <div class="esp" style="height: 3rem;"></div>
+                        <a href="http://localhost/DealerTech/php/login_usuario/sair.php" style="color: white;" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sair</span> </a> 
+                    </div>
+                </div> 
+            </nav>
+        </div>
+        <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>
+        <!--Conteúdo da página-->
+        <div>
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="loading">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            <br>
+            <h3>Status do Sistema</h3>
+            <br>
+            <div class="row">
+                <h4><b>Clientes</b></h4>
+                <div class="col-md-6 col-sm-12">
+                    <div id="top_x_div" style="width:25rem; height: 25rem;"></div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div id="barchart_material" style="width:25rem; height: 25rem;"></div>
+                </div>
+            </div>
+            <br><br>
+            <!--Próxima aba-->
+        </div>
+        <!--Conteúdo da página-->
+        
+    </body>
 </html>

@@ -1,10 +1,4 @@
 <?php
-if (session_status() !== PHP_SESSION_ACTIVE) {
-	session_start();
-	$tipo = $_SESSION['usuarioNiveisAcessoId'];
-}else{
-	$tipo = "deslogado";
-}
 include_once("php/conexao.php");
 
 ?>
@@ -50,31 +44,68 @@ include_once("php/conexao.php");
     </style>
     <body>	
     <div class="menu">
-        <ul class=>
-            <li> <a href="#" style="color: rgba(117, 2, 2, 0);"> </a></li> <!--Programação Orientada a Gambiarra-->
-            <li> <a href="http://localhost/DealerTech/index.php" title="Página Inicial"> <i class="fas fa-home"> </i> Home </a></li>
-            <li> <a href="http://localhost/DealerTech/comprar.php" title="Compre o seu carro de luxo"> <i class="fas fa-dollar-sign"> </i> Comprar </a></li>
-            <li> <a href="http://localhost/DealerTech/carros.php" title="Conheça os veículos de luxo"> <i class="fas fa-car"></i> Carros </a></li>
-            <li> <a href="http://localhost/DealerTech/contatos.php" title="Entre em Contato Conosco"> <i class="fas fa-phone-alt"></i> Contatos </a></li>
-            <li> <a href="http://localhost/DealerTech/sobre.php" style="background: #fff; color:rgb(117, 2, 2); border-radius: 3px;" title="Conheça a Empresa Saga Veículos de Luxo"> <i class="fas fa-clipboard"></i> Sobre Nós </a></li>
-			<?php
-			if($tipo=="cliente"){
-			?>		
-				<li id="centro2" class="sair1"><a href="http://localhost/DealerTech/php/login_usuario/sair.php" title="Sair" style="font-size: 25px; margin-top: 0px;"><i class="fas fa-sign-out-alt"></i></a></li>	
-			<?php
-			}else if($tipo=="admin"){
-			?>	
-				<li id="centro2" class="oa"> <a href="http://localhost/DealerTech/admin/admin.php" title="Opções Administrativas" style="font-size: 22px; margin-top: 0px;"> <i class="fas fa-tools"></i> </a></li>
-                <li id="centro2" class="sair"><a href="http://localhost/DealerTech/php/login_usuario/sair.php" title="Sair" style="font-size: 25px; margin-top: 0px;"><i class="fas fa-sign-out-alt"></i></a></li>	
-			<?php	
-			}else{
-			?>
-				<li id="centro2" class="oa"> <a href="http://localhost/DealerTech/login.php" title="Fazer Login" style="font-size: 22px; margin-top: 0px;"> <i class="fas fa-user-edit"></i></a></li>
-                <li id="centro2" class="sair"><a href="http://localhost/DealerTech/cadastro.php" title="Fazer Cadastro" style="font-size: 25px; margin-top: 0px;"><i class="fas fa-cog"></i></a></li>	
-			<?php
-			}
-			?>
-		</ul>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#800000;">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://localhost/DealerTech/index.php"> <i class="fas fa-home"> </i> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://localhost/DealerTech/comprar.php"> <i class="fas fa-dollar-sign"> </i> Comprar</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://localhost/DealerTech/carros.php"> <i class="fas fa-car"></i> Carros</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://localhost/DealerTech/contatos.php"> <i class="fas fa-phone-alt"></i> Contatos</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://localhost/DealerTech/sobre.php"> <i class="fas fa-clipboard"></i> Sobre Nós</a>
+                </li>
+                <li class="nav-item">
+                </li>
+                <?php
+                if(isset($_SESSION['usuarioNiveisAcessoId'])){
+                $tipo = $_SESSION['usuarioNiveisAcessoId'];
+                }else{
+                    $tipo="";
+                }
+                if($tipo=="cliente"){
+                ?>		
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://localhost/DealerTech/php/login_usuario/sair.php" title="Sair" style="font-size: 25px;"> <i class="fas fa-sign-out-alt"></i></a>
+                    </li>	
+                <?php
+                }else if($tipo=="admin"){
+                ?>	
+                    <li class="nav-item active"> 
+                        <a class="nav-link" href="http://localhost/DealerTech/admin/admin.php" title="Opções Administrativas" style="font-size: 25px;"> <i class="fas fa-tools"></i> </a> 
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://localhost/DealerTech/php/login_usuario/sair.php" title="Sair" style="font-size: 25px;"><i class="fas fa-sign-out-alt"></i></a>
+                    </li>	
+                <?php	
+                }else{
+                ?>
+                    <li class="nav-item active"> 
+                        <a class="nav-link" href="http://localhost/DealerTech/login.php" title="Fazer Login" style="font-size: 25px;"> <i class="fas fa-user-edit"></i></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://localhost/DealerTech/cadastro.php" title="Fazer Cadastro" style="font-size: 25px;"><i class="fas fa-cog"></i></a>
+                    </li>	
+                <?php
+                }
+                ?>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+              </form>
+            </div>
+        </nav>
     </div>
          <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>
          <br> <br> <br> 
@@ -125,6 +156,10 @@ include_once("php/conexao.php");
         </h10>
     -->
         
-
+        <!--Bootstrap-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>
     </body>	
 </html>

@@ -6,20 +6,13 @@
 body {
     font-family: 'Times New Roman', Times, serif;
 }
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #ecf0f1;
-}
 
 .second-content{
     position: absolute;
-    display: flex;
+    
 }
 .first-content {
-    display: flex;
+    
     
 }
 .list-social-media{

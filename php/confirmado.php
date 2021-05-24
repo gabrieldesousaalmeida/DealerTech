@@ -59,10 +59,10 @@
 						$result_usuario = "INSERT INTO clientes (nome, email, senha,niveis_acesso_id, created) VALUES ('$nome', '$email', '$senha','$niveis_acesso_id', NOW())";
 						$resultado_usuario = mysqli_query($conn, $result_usuario);
 						
-						$_SESSION['usuarioEmail'] = $_SESSION['usuarioemail'];
-						$_SESSION['usuarioSenha'] = $_SESSION['usuariosenha'];
-						$_SESSION['usuarioNome'] = $_SESSION['usuarionome'];
-						
+						$_SESSION['usuarioEmail'] = $email;
+						$_SESSION['usuarioSenha'] = $senha;
+						$_SESSION['usuarioNome'] = $nome;
+						$_SESSION['usuarioNiveisAcessoId'] = "cliente";
 
 						$result_links_emaos = "UPDATE links_emaos SET situacao = '2' WHERE link = '$chave'";
 						$resultado_links_emaos = mysqli_query($conn, $result_links_emaos);
