@@ -85,7 +85,7 @@ a {
     left: -30%;
     width: var(--nav-width);
     height: 100vh;
-    background: linear-gradient(black,#800000,#000);
+    background-color:black;
     padding: .5rem 1rem 0 0;
     transition: .5s;
     z-index: var(--z-fixed)
@@ -251,6 +251,7 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
     <body id="body-pd">
         <header class="header" id="header">
             <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+            <h3>Status do Sistema</h3>
             <div class="header_img"> <img src="http://localhost/DealerTech/Imagens/felipe.jfif" alt=""> </div>
         </header>
         <div class="l-navbar" id="nav-bar">
@@ -274,14 +275,7 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
         <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>
         <!--Conteúdo da página-->
         <div>
-            <div class="d-flex justify-content-center">
-                <div class="spinner-border" role="loading">
-                  <span class="visually-hidden">Loading...</span>
-                </div>
-              </div>
-            <br>
-            <h3>Status do Sistema</h3>
-            <br>
+        <br>
             <div class="row">
                 <h4><b>Clientes</b></h4>
                 <div class="col-md-6 col-sm-12">

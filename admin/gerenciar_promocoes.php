@@ -85,7 +85,7 @@ a {
     left: -30%;
     width: var(--nav-width);
     height: 100vh;
-    background: linear-gradient(black,#800000,#000);
+    background-color:black;
     padding: .5rem 1rem 0 0;
     transition: .5s;
     z-index: var(--z-fixed)

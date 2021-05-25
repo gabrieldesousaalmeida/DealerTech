@@ -4,12 +4,22 @@
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <title>Eventos</title>
-        <!--Google Charts-->
-        <script src="https://www.gstatic.com/charts/loader.js"></script>
-        <script src="http://localhost/DealerTech/js/barras1.js"></script>
-        <script src="http://localhost/DealerTech/js/barras2.js"></script>
-        <script src="http://localhost/DealerTech/js/barras3.js"></script>
-        <!--/Google Charts-->
+        <!--FullCalendar-->
+        <link href='http://localhost/DealerTech/css/css_calendar/core/main.min.css' rel='stylesheet' />
+        <link href='http://localhost/DealerTech/css/css_calendar/daygrid/main.min.css' rel='stylesheet' />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost/DealerTech/css/css_calendar/personalizado.css">
+
+        <script src='http://localhost/DealerTech/js/js_calendar/core/main.min.js'></script>
+        <script src='http://localhost/DealerTech/js/js_calendar/interaction/main.min.js'></script>
+        <script src='http://localhost/DealerTech/js/js_calendar/daygrid/main.min.js'></script>
+        <script src='http://localhost/DealerTech/js/js_calendar/core/locales/pt-br.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="http://localhost/DealerTech/js/js_calendar/personalizado.js"></script>
+        <!--/FullCalendar-->
+
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
         <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
@@ -85,7 +95,7 @@ a {
     left: -30%;
     width: var(--nav-width);
     height: 100vh;
-    background: linear-gradient(black,#800000,#000);
+    background-color:black;
     padding: .5rem 1rem 0 0;
     transition: .5s;
     z-index: var(--z-fixed)
@@ -251,43 +261,176 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
     <body id="body-pd">
         <header class="header" id="header">
             <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+            <h3>Eventos</h3>
             <div class="header_img"> <img src="http://localhost/DealerTech/Imagens/felipe.jfif" alt=""> </div>
         </header>
         <div class="l-navbar" id="nav-bar">
             <nav class="nav">
                 <div> 
-                    <a href="http://localhost/DealerTech/index.php" class="nav_logo" style="color: white;"> <i class='fas fa-home'></i> <span class="nav_logo-name">Home</span> </a>
+                    <a href="http://localhost/DealerTech/index.php" class="nav_logo" style="color: white;text-decoration:none;"> <i class='fas fa-home'></i> <span class="nav_logo-name">Home</span> </a>
                     <div class="nav_list"> 
-                        <a href="http://localhost/DealerTech/admin/admin.php" style="color: white;" class="nav_link "> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span></a>
-                        <a href="http://localhost/DealerTech/admin/estoque.php" style="color: white;"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Estoque</span> </a>
-                        <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style="color: white;" class="nav_link"> <i class='fas fa-car'></i> <span class="nav_name">Veículos</span> </a>
-                        <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style="color: white;" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Usuários</span> </a>  
-                        <a href="http://localhost/DealerTech/admin/eventos.php" style="color: white;" class="nav_link active"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Eventos</span> </a>                         
-                        <a href="http://localhost/DealerTech/admin/vendas.php" style="color: white;" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Vendas</span> </a>
-                        <a href="http://localhost/DealerTech/admin/gerenciar_promocoes.php" style="color: white;" class="nav_link"> <i class='fas fa-money-bill'></i> <span class="nav_name">Promoções</span> </a>
+                        <a href="http://localhost/DealerTech/admin/admin.php" style="color: white;text-decoration:none;" class="nav_link "> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span></a>
+                        <a href="http://localhost/DealerTech/admin/estoque.php" style="color: white;text-decoration:none;"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Estoque</span> </a>
+                        <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='fas fa-car'></i> <span class="nav_name">Veículos</span> </a>
+                        <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Usuários</span> </a>  
+                        <a href="http://localhost/DealerTech/admin/eventos.php" style="color: white;text-decoration:none;" class="nav_link active"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Eventos</span> </a>                         
+                        <a href="http://localhost/DealerTech/admin/vendas.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Vendas</span> </a>
+                        <a href="http://localhost/DealerTech/admin/gerenciar_promocoes.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='fas fa-money-bill'></i> <span class="nav_name">Promoções</span> </a>
                         <div class="esp" style="height: 3rem;"></div>
-                        <a href="http://localhost/DealerTech/php/login_usuario/sair.php" style="color: white;" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sair</span> </a> 
+                        <a href="http://localhost/DealerTech/php/login_usuario/sair.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sair</span> </a> 
                     </div>
                 </div> 
             </nav>
         </div>
         <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>
         <!--Conteúdo da página-->
-        <div>
-            <h3>Eventos</h3>
-            <br>
-            <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    teste
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    Teste
+            <?php
+        if (isset($_SESSION['msg'])) {
+            echo $_SESSION['msg'];
+            unset($_SESSION['msg']);
+        }
+        ?>
+        <div id='calendar'></div>
+
+        <div class="modal fade" id="visualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Detalhes do Evento</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="visevent">
+                            <dl class="row">
+                                <dt class="col-sm-3">ID do evento</dt>
+                                <dd class="col-sm-9" id="id"></dd>
+
+                                <dt class="col-sm-3">Título do evento</dt>
+                                <dd class="col-sm-9" id="title"></dd>
+
+                                <dt class="col-sm-3">Início do evento</dt>
+                                <dd class="col-sm-9" id="start"></dd>
+
+                                <dt class="col-sm-3">Fim do evento</dt>
+                                <dd class="col-sm-9" id="end"></dd>
+                            </dl>
+                            <button class="btn btn-warning btn-canc-vis">Editar</button>
+                            <a href="" id="apagar_evento" class="btn btn-danger">Apagar</a>
+                        </div>
+                        <div class="formedit">
+                            <span id="msg-edit"></span>
+                            <form id="editevent" method="POST" enctype="multipart/form-data">
+                                <input type="hidden" name="id" id="id" >
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Título</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="title" class="form-control" id="title" placeholder="Título do evento">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Color</label>
+                                    <div class="col-sm-10">
+                                        <select name="color" class="form-control" id="color">
+                                            <option value="">Selecione</option>			
+                                            <option style="color:#FFD700;" value="#FFD700">Amarelo</option>
+                                            <option style="color:#0071c5;" value="#0071c5">Azul Turquesa</option>
+                                            <option style="color:#FF4500;" value="#FF4500">Laranja</option>
+                                            <option style="color:#8B4513;" value="#8B4513">Marrom</option>	
+                                            <option style="color:#1C1C1C;" value="#1C1C1C">Preto</option>
+                                            <option style="color:#436EEE;" value="#436EEE">Royal Blue</option>
+                                            <option style="color:#A020F0;" value="#A020F0">Roxo</option>
+                                            <option style="color:#40E0D0;" value="#40E0D0">Turquesa</option>
+                                            <option style="color:#228B22;" value="#228B22">Verde</option>
+                                            <option style="color:#8B0000;" value="#8B0000">Vermelho</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Início do evento</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="start" class="form-control" id="start" onkeypress="DataHora(event, this)">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Final do evento</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="end" class="form-control" id="end"  onkeypress="DataHora(event, this)">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <button type="button" class="btn btn-primary btn-canc-edit">Cancelar</button>
+                                        <button type="submit" name="CadEvent" id="CadEvent" value="CadEvent" class="btn btn-warning">Salvar</button>                                    
+                                    </div>
+                                </div>
+                            </form>                            
+                        </div>
+                    </div>
                 </div>
             </div>
-            <br><br>
-            <!--Próxima aba-->
         </div>
-        <!--Conteúdo da página-->
-        
+
+        <div class="modal fade" id="cadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cadastrar Evento</h5>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="msg-cad"></span>
+                        <form id="addevent" method="POST" enctype="multipart/form-data">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Título</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="title" class="form-control" id="title" placeholder="Título do evento">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Color</label>
+                                <div class="col-sm-10">
+                                    <select name="color" class="form-control" id="color">
+                                        <option value="">Selecione</option>			
+                                        <option style="color:#FFD700;" value="#FFD700">Amarelo</option>
+                                        <option style="color:#0071c5;" value="#0071c5">Azul Turquesa</option>
+                                        <option style="color:#FF4500;" value="#FF4500">Laranja</option>
+                                        <option style="color:#8B4513;" value="#8B4513">Marrom</option>	
+                                        <option style="color:#1C1C1C;" value="#1C1C1C">Preto</option>
+                                        <option style="color:#436EEE;" value="#436EEE">Royal Blue</option>
+                                        <option style="color:#A020F0;" value="#A020F0">Roxo</option>
+                                        <option style="color:#40E0D0;" value="#40E0D0">Turquesa</option>
+                                        <option style="color:#228B22;" value="#228B22">Verde</option>
+                                        <option style="color:#8B0000;" value="#8B0000">Vermelho</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Início do evento</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="start" class="form-control" id="start" onkeypress="DataHora(event, this)">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Final do evento</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="end" class="form-control" id="end"  onkeypress="DataHora(event, this)">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <button type="submit" name="CadEvent" id="CadEvent" value="CadEvent" class="btn btn-success">Cadastrar</button>                                    
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
