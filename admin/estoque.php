@@ -256,17 +256,17 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
         <div class="l-navbar" id="nav-bar">
             <nav class="nav">
                 <div> 
-                    <a href="http://localhost/DealerTech/index.php" class="nav_logo" style="color: white;"> <i class='fas fa-home'></i> <span class="nav_logo-name">Home</span> </a>
+                <a href="http://localhost/DealerTech/index.php" class="nav_logo" style="color: white;text-decoration:none;"> <i class='fas fa-home'style="color:red;"></i> <span class="nav_logo-name">Home</span> </a>
                     <div class="nav_list"> 
-                        <a href="http://localhost/DealerTech/admin/admin.php" style="color: white;" class="nav_link "> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span></a>
-                        <a href="http://localhost/DealerTech/admin/estoque.php" style="color: white;"class="nav_link active"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Estoque</span> </a>
-                        <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style="color: white;" class="nav_link"> <i class='fas fa-car'></i> <span class="nav_name">Veículos</span> </a>
-                        <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style="color: white;" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Usuários</span> </a>  
-                        <a href="http://localhost/DealerTech/admin/eventos.php" style="color: white;" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Eventos</span> </a>                         
-                        <a href="http://localhost/DealerTech/admin/vendas.php" style="color: white;" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Vendas</span> </a>
-                        <a href="http://localhost/DealerTech/admin/gerenciar_promocoes.php" style="color: white;" class="nav_link"> <i class='fas fa-money-bill'></i> <span class="nav_name">Promoções</span> </a>
+                        <a href="http://localhost/DealerTech/admin/admin.php" style="color: white;text-decoration:none;"  class="nav_link "> <i class='bx bx-grid-alt nav_icon' style="color:red;"></i> <span class="nav_name">Dashboard</span></a>
+                        <a href="http://localhost/DealerTech/admin/estoque.php" style="color: white;text-decoration:none;" class="nav_link active"> <i class='bx bx-folder nav_icon'style="color:red;"></i> <span class="nav_name">Estoque</span> </a>
+                        <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='fas fa-car'style="color:red;"></i> <span class="nav_name">Veículos</span> </a>
+                        <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-user nav_icon'style="color:red;"></i> <span class="nav_name">Usuários</span> </a>  
+                        <a href="http://localhost/DealerTech/admin/eventos/eventos.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-bookmark nav_icon'style="color:red;"></i> <span class="nav_name">Eventos</span> </a>                         
+                        <a href="http://localhost/DealerTech/admin/vendas.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'style="color:red;"></i> <span class="nav_name">Vendas</span> </a>
+                        <a href="http://localhost/DealerTech/admin/gerenciar_promocoes.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='fas fa-money-bill'style="color:red;"></i> <span class="nav_name">Promoções</span> </a>
                         <div class="esp" style="height: 3rem;"></div>
-                        <a href="http://localhost/DealerTech/php/login_usuario/sair.php" style="color: white;" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sair</span> </a> 
+                        <a href="http://localhost/DealerTech/php/login_usuario/sair.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-log-out nav_icon'style="color:red;"></i> <span class="nav_name">Sair</span> </a> 
                     </div>
                 </div> 
             </nav>

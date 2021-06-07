@@ -14,7 +14,8 @@
     $result_usuario = "INSERT INTO veiculos (modelo, chassi, fabricante, ano, marca, cor, preço, qm) VALUES ('$modelo', '$chassi', '$fabricante', '$ano','$marca','$cor','$preço', '$qm')";
     $resultado_usuario = mysqli_query($conn, $result_usuario);
     
-    
+    $_SESSION['marca'] = $marca;
+    $_SESSION['modelo'] = $modelo;
     $_SESSION['msg'] = "";
-    header("Location: http://localhost/DealerTech/php/cadastro_veiculo/upload.php");
+    header("Location: http://localhost/DealerTech/admin/cadastrar_veiculo/upload.php");
 ?>

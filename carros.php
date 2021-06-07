@@ -38,11 +38,118 @@ include_once("php/conexao.php");
 		.sair1{
             margin-left: 28%;
         }
-		.img{
-		width: 350px;
-		height: 160px;
-		margin-left: 3%;
-		}
+        #centro{
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .divimage{
+            background-image: url(http://localhost/DealerTech/Imagens/gg.png);
+            height: 648px;    
+        }
+        .botao a {  
+        font: bold 12px/24px 'Times New Roman', Times, serif;	
+        text-decoration: none;
+        text-align:center;	
+        color: rgb(117, 117, 117);
+        background: rgb(185, 185, 185);
+        width: 300px;  
+        height: 70px;	
+        display:block;
+        font-size: 17px;
+        border-radius: 5px;      
+	    } 
+        .botao a:hover { 
+            background: #ca0b0b;
+            transition: 0.5s;
+            color:#fff;    
+            display:block;        
+}
+        body{
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center; 
+    background: lavender;
+    }
+ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+ul li{
+    list-style: none;
+    margin: 0 20px;
+    transition: 2s;
+}
+ul li a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 13px;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    transition: .5s;
+}
+ls{
+    display: block;
+    position: relative;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    color: #fff;
+
+}
+ul:hover li a{
+    transform: scale(1.0);
+    opacity: .5;
+    filter: blur(1px);
+}
+
+ul li a:hover{
+    transform: scale(1.3);
+    opacity: 1;
+    filter: blur(0);
+}
+.menu{  
+    float: right;
+    width:100%;
+    height: 35px;
+    
+}
+/*DIV CAR*/
+.car{
+  background: linear-gradient(#f5f5f5, #f5f5f5 ,#f5f5f5);
+  margin-top: 50px;
+  border-radius: 4px;
+  height: 470px;
+  width: 350px;
+  margin-left: 20px;
+  text-align: center;
+  border:solid 1px rgb(185, 185, 185);
+  display: inline-block;
+}
+h2{
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  text-transform: uppercase;
+  color:black;
+
+}
+h4{
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  color: gray;
+  font-size: 15px;
+}
+h5{
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  color: black;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-top: center;
+}
 		</style>
 	</head>
 	<body style="background-color: white;">
@@ -96,10 +203,10 @@ include_once("php/conexao.php");
                 }else{
                 ?>
                     <li class="nav-item active"> 
-                        <a class="nav-link" href="http://localhost/DealerTech/login.php" title="Fazer Login" style="font-size: 25px;"> <i class="fas fa-user-edit"></i></a>
+                        <a class="nav-link" href="http://localhost/DealerTech/login.php" title="Fazer Login" style="font-size: 10px;"> <i class="fas fa-user-edit"></i></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost/DealerTech/cadastro.php" title="Fazer Cadastro" style="font-size: 25px;"><i class="fas fa-cog"></i></a>
+                        <a class="nav-link" href="http://localhost/DealerTech/cadastro.php" title="Fazer Cadastro" style="font-size: 10px;"><i class="fas fa-cog"></i></a>
                     </li>	
                 <?php
                 }
@@ -112,8 +219,7 @@ include_once("php/conexao.php");
     </div>
         <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>
 		<br>
-		<h2>CARROS</h2>
-			<div id=posição class="bloco">
+
 			<center>		
 				<?php
                 //cáculo pg
@@ -128,29 +234,24 @@ include_once("php/conexao.php");
 				$result_cursos = "SELECT * FROM veiculos LIMIT $inicio, $qnt_result_pg";
                 $resultado_cursos = mysqli_query($conn, $result_cursos);
                 while ($rows_cursos = mysqli_fetch_array($resultado_cursos)) { 
-				?>	
-				<div id="card_cliente">
-					<div id="card_info">	
-						<?php
-							echo "<b>Marca:</b> " . $rows_cursos['marca'] . "<br>";
-							echo "<b>Modelo:</b> " . $rows_cursos['modelo'] . "<br>";
-                            $categoria_id = $rows_cursos['id'];
-                        ?>
-                            <?php
-                            $result_categorias = "SELECT * FROM imagens WHERE id = '$categoria_id'";
-                            $resultado_categorias = mysqli_query($conn, $result_categorias);
-                            while ($rows_categorias = mysqli_fetch_array($resultado_categorias)) {     
-                                echo "<img class='img'src='http://localhost/DealerTech/veiculos/".$rows_categorias['id']."/".$rows_categorias['imagem']."'>";
-                            ?>
-					</div>
-                    <div id="card_info" class="card_button">
-						<button title="Estou Interessado">
-						<?php
-							echo "<a style='text-decoration: none'; href='veiculos/".$rows_categorias['id']."/".$rows_categorias['id'].".php'>Estou Interessado</a>";
-						?>	
-						</button>		
-					</div>
-				</div>
+                    $categoria_id = $rows_cursos['modelo'];
+                    $result_categorias = "SELECT * FROM imagens WHERE nome = '$categoria_id'";
+                    $resultado_categorias = mysqli_query($conn, $result_categorias);
+                    while ($rows_categorias = mysqli_fetch_array($resultado_categorias)) {     
+                        
+                ?>
+                    <div class="car">
+                        <h2> <?php echo $rows_cursos['modelo'];?></h2> 
+                        <h4> xdrive40i m sport </h4>
+                        <br> 
+                        <?php echo "<img src='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_categorias['imagem']."' style='height: 130px;'>";?> 
+                        <h5> R$ 662.950 <br><p style="color: gray; font-size: 20px;"> 0Km - Ano: 2020</p></h5>
+                        <img src="Imagens/bmwx6/logo.png" style="height: 60px;"/>
+                        
+                        <p class="botao" id="centro" style="margin-top:20px">
+                        <?php echo "<a href='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_cursos['modelo'].".php"."'style='font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;'><br> <b> <i class='fas fa-eye'></i> Ver Carro </a>";?>       
+                        </p>
+                    </div>	
 				<?php
                     }
 				}
@@ -187,9 +288,6 @@ include_once("php/conexao.php");
 				
 				?>
 			</center>
-				<a href="#" style="text-decoration:none" onclick="window.print();" class="circulo1" id="mais" title="Imprimir">
-					<center><img src="Imagens/imprimir.png" height="35"; width="35"; id="imprimir" style="margin-top:7%;"></center>
-				</a>	
 			</div>
 			<!--Bootstrap-->
 			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

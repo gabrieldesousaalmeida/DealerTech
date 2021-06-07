@@ -4,6 +4,9 @@
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <title>Área Administrativa</title>
+
+        <link rel="stylesheet" href="http://localhost/DealerTech/css/spinner.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <!--Google Charts-->
         <script src="https://www.gstatic.com/charts/loader.js"></script>
         <script src="http://localhost/DealerTech/js/barras1.js"></script>
@@ -249,7 +252,12 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
 </head>
     <body oncontextmenu='return false' class='snippet-body'>
     <body id="body-pd">
-        <header class="header" id="header">
+    <div class="loading">
+        <div class="spinner-border text-danger porcent" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+        <header class="header" id="header" >
             <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
             <h3>Status do Sistema</h3>
             <div class="header_img"> <img src="http://localhost/DealerTech/Imagens/felipe.jfif" alt=""> </div>
@@ -257,17 +265,17 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
         <div class="l-navbar" id="nav-bar">
             <nav class="nav">
                 <div> 
-                    <a href="http://localhost/DealerTech/index.php" class="nav_logo" style="color: white;"> <i class='fas fa-home'></i> <span class="nav_logo-name">Home</span> </a>
+                <a href="http://localhost/DealerTech/index.php" class="nav_logo" style="color: white;text-decoration:none;"> <i class='fas fa-home'style="color:red;"></i> <span class="nav_logo-name">Home</span> </a>
                     <div class="nav_list"> 
-                        <a href="http://localhost/DealerTech/admin/admin.php" style="color: white;" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span></a>
-                        <a href="http://localhost/DealerTech/admin/estoque.php" style="color: white;"class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Estoque</span> </a>
-                        <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style="color: white;" class="nav_link"> <i class='fas fa-car'></i> <span class="nav_name">Veículos</span> </a>
-                        <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style="color: white;" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Usuários</span> </a>  
-                        <a href="http://localhost/DealerTech/admin/eventos.php" style="color: white;" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Eventos</span> </a>                         
-                        <a href="http://localhost/DealerTech/admin/vendas.php" style="color: white;" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Vendas</span> </a>
-                        <a href="http://localhost/DealerTech/admin/gerenciar_promocoes.php" style="color: white;" class="nav_link"> <i class='fas fa-money-bill'></i> <span class="nav_name">Promoções</span> </a>
+                        <a href="http://localhost/DealerTech/admin/admin.php" style="color: white;text-decoration:none;" class="nav_link active" class="nav_link "> <i class='bx bx-grid-alt nav_icon' style="color:red;"></i> <span class="nav_name">Dashboard</span></a>
+                        <a href="http://localhost/DealerTech/admin/estoque.php" style="color: white;text-decoration:none;"class="nav_link"> <i class='bx bx-folder nav_icon'style="color:red;"></i> <span class="nav_name">Estoque</span> </a>
+                        <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='fas fa-car'style="color:red;"></i> <span class="nav_name">Veículos</span> </a>
+                        <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-user nav_icon'style="color:red;"></i> <span class="nav_name">Usuários</span> </a>  
+                        <a href="http://localhost/DealerTech/admin/eventos/eventos.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-bookmark nav_icon'style="color:red;"></i> <span class="nav_name">Eventos</span> </a>                         
+                        <a href="http://localhost/DealerTech/admin/vendas.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'style="color:red;"></i> <span class="nav_name">Vendas</span> </a>
+                        <a href="http://localhost/DealerTech/admin/gerenciar_promocoes.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='fas fa-money-bill'style="color:red;"></i> <span class="nav_name">Promoções</span> </a>
                         <div class="esp" style="height: 3rem;"></div>
-                        <a href="http://localhost/DealerTech/php/login_usuario/sair.php" style="color: white;" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sair</span> </a> 
+                        <a href="http://localhost/DealerTech/php/login_usuario/sair.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-log-out nav_icon'style="color:red;"></i> <span class="nav_name">Sair</span> </a> 
                     </div>
                 </div> 
             </nav>
@@ -289,6 +297,9 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
             <!--Próxima aba-->
         </div>
         <!--Conteúdo da página-->
-        
+        <script src="http://localhost/DealerTech/js/spinner.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 </html>
