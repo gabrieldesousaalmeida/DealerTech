@@ -1,3 +1,9 @@
+<?php
+session_start();
+include_once("conexao.php");
+
+$modelo= basename($_SERVER['PHP_SELF'],'.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,7 +88,14 @@
 
 					<div class="text-center p-t-12">
 						<span class="txt1" style="font-size: 17px;">
-							BMW X6 xdrive40i m sport
+						<?php
+							 $result_cursos = "SELECT * FROM veiculos WHERE modelo='$modelo'";
+							 $resultado_cursos = mysqli_query($conn, $result_cursos);
+							 
+							while ($rows_cursos = mysqli_fetch_array($resultado_cursos)) {
+								echo $rows_cursos['marca']." ".$modelo. " ".$rows_cursos['versao'];
+							 
+						?>
 						</span>
 						<a class="txt2" href="#">
 
@@ -90,7 +103,7 @@
 					</div>
 
 					<div class="text-center p-t-136" style="margin-top:-100px;">
-						<a class="txt2" href="http://localhost/DealerTech2/123.html">
+						<?php echo "<a class='txt2' href='"$modelo.".php'>";?>
 							Voltar a página anterior
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>

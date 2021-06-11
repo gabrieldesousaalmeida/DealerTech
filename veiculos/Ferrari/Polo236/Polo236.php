@@ -248,12 +248,19 @@ h13{
         <div class="carro"> 
         
         <?php
+        function inteiro_decimal_br($numero){
+          $numero = number_format($numero, 2, ',', '.');
+          return $numero;
+        }
+
         $result_cursos = "SELECT * FROM veiculos WHERE modelo='$modelo'";
         $resultado_cursos = mysqli_query($conn, $result_cursos);
         
 				while ($rows_cursos = mysqli_fetch_array($resultado_cursos)) {   
-          $categoria_id = $rows_cursos['id'];        
-          $result_categorias = "SELECT * FROM imagens WHERE id = '$categoria_id'";
+          $categoria_id = $rows_cursos['modelo'];
+          $preço = $rows_cursos['preço'];
+          $valor_tela = inteiro_decimal_br($preço);        
+          $result_categorias = "SELECT * FROM imagens WHERE nome = '$categoria_id'";
           $resultado_categorias = mysqli_query($conn, $result_categorias);
           
           while ($rows_categorias = mysqli_fetch_array($resultado_categorias)) { 
@@ -264,7 +271,7 @@ h13{
             <h5> Garanta já essa oferta! </h5>
         <h1><?php echo $rows_cursos['modelo']."<br>";?></h1>
         <h10>Motor 3,0 l 6 cilindros</h10>    
-        <h2> Preço: <br> R$ 662.950 </h2>  
+        <h2> Preço: <br> R$ <?php echo $valor_tela;?> </h2>  
         <p class="botao" id="centro" style="margin-top: 15px; margin-left: 728px;">       
           <a href="#" title="" style="font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;"> <br> <b><i class="fas fa-shopping-cart"></i> Comprar </a>
         </p>
@@ -414,7 +421,7 @@ h13{
         <h4 style="font-size: 23px;margin-left: 40px;color: #800000;text-align: right;margin-right: 40px;"><i>Blindagem:</i></h4><h4 style="font-size: 17px;margin-left: 40px;text-align: right;margin-right: 40px;">  Não </h4> 
 	
         <!--IMAGEM--> 
-	
+        
         <!--FIM; IMAGEM-->
         <?php echo "<img class='ggimage' src='http://localhost/DealerTech/Imagens/Marcas/".$rows_cursos['marca'].".png"."' style='height: 80px; opacity: 0.5; margin-left: 624px; margin-top:0px;'>";?>
 	    
@@ -439,7 +446,7 @@ h13{
 	<script src='http://localhost/DealerTech/lib/elevatezoom-master/jquery.elevatezoom.js'></script>
 </head>
 <body>
-	
+
 <?php echo "<img id='zoom_01' src='".$rows_categorias['zoom_small']."' data-zoom-image='".$rows_categorias['zoom_large']."' style='margin-left: 450px; margin-top: -670px; border-radius: 8px;'>";?>
 <?php
           }

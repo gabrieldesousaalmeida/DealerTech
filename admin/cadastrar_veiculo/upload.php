@@ -37,61 +37,64 @@
 	
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100 p-t-50 p-b-90">
-				<form class="login100-form validate-form flex-sb flex-w" name="dados" method="POST" action="http://localhost/DealerTech/php/cadastro_veiculo/processa_img.php" enctype="multipart/form-data">
-					<span class="login100-form-title p-b-51" style="margin-top: -50px;">
+				<form class="login100-form validate-form flex-sb flex-w" name="dados" method="POST" action="http://localhost/DealerTech/php/cadastro_veiculo/processa_img.php" enctype="multipart/form-data" style="width: 1000px;">
+					<span class="login100-form-title p-b-51" style="margin-top: 0px;">
 						Upload de Imagens
 					</span>
-					<div class="lado">
-						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 1">
+					
+						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 1" style="margin-top: -35px; height:70px;">
 							Imagem Principal:<input class="input100" type="file" name="arquivo1" placeholder="Marca">
 							<span class="focus-input100"></span>
 						</div>
-						
-						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 1">
-							Imagem da Lupa:<input class="input100" type="file" name="arquivo2" placeholder="Marca">
+					<div style="display: inline-block;">	
+						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 1" style="height:80px;">
+							Imagem da Lupa pequena:<input class="input100" type="file" name="arquivo2" placeholder="Marca">
 							<span class="focus-input100"></span>
 						</div>
 
-						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 1">
+						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 1" style="height:80px;">
+							Imagem da Lupa grande:<input class="input100" type="file" name="arquivo9" placeholder="Marca">
+							<span class="focus-input100"></span>
+						</div>
+
+						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 1" style="height:80px;">
 							Imagem Slide 1:<input class="input100" type="file" name="arquivo3" placeholder="Marca">
 							<span class="focus-input100"></span>
 						</div>
 
-						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 2">
+						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 2" style="height:80px;">
 							Imagem Slide 2:<input class="input100" type="file" name="arquivo4" placeholder="Modelo">
 							<span class="focus-input100"></span>
 						</div>
 					</div>
-					<div class="lado">
-						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 3">
+					<div style="display: inline-block;">
+						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 3" style="height:80px;">
 							Imagem Slide 3<input class="input100" type="file" name="arquivo5" placeholder="Versão">
 							<span class="focus-input100"></span>
 						</div>
 
-						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 4">
+						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 4" style="height:80px;">
 							Imagem Slide 4:<input class="input100" type="file" name="arquivo6" placeholder="Cor">
 							<span class="focus-input100"></span>
 						</div>
 
-						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 5">
+						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 5" style="height:80px;">
 							Imagem Slide 5:<input class="input100" type="file" name="arquivo7" placeholder="Motor">
 							<span class="focus-input100"></span>
 						</div>
 
-						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 6">
+						<div class="wrap-input100 validate-input m-b-16" data-validate = "Imagem Slide 6" style="height:80px;">
 							Imagem Slide 6:<input class="input100" type="file" name="arquivo8" placeholder="Ano">
 							<span class="focus-input100"></span>
 						</div>
 					</div>
-					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn" style="font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif; font-size: 40px;" type="submit">
-							Enviar    <i class="fas fa-pencil-alt"></i> 
-						</button>
-					</div>
+						<div class="container-login100-form-btn m-t-17">
+							<button class="login100-form-btn" style="font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif; font-size: 40px;" type="submit">
+								Enviar    <i class="fas fa-pencil-alt"></i> 
+							</button>
+						</div>
 
 				</form>
-			</div>
 		</div>
 	</div>
 	

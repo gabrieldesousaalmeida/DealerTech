@@ -1,11 +1,12 @@
 <?php
 session_start();
+include_once("conexao.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br"> 
     <head>	
         <meta charset="utf-8"/>
-        <title>Carros</title>        
+        <title>Carros Novos</title>        
         <link rel="apple-touch-icon" sizes="180x180" href="http://localhost/DealerTech/Imagens/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="http://localhost/DealerTech/Imagens/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="http://localhost/DealerTech/Imagens/favicon-16x16.png">
@@ -26,6 +27,45 @@ session_start();
 <!--Tag Responsiva-->
 
         <style>
+          .botao3 a {  
+        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;	     
+        text-decoration: none;
+        text-align:center;	
+        color: rgb(180, 180, 180);
+        width: 100px;  
+        height: 38px;	
+        display:block;
+        font-size: 25px;
+        border-radius: 5px;    
+        background-color: gray;
+        border: 1px solid rgb(102, 102, 102);
+        } 
+        .botao3 a:hover { 
+            border: 1px solid red;
+            background-color: #800000;
+            color:red;
+            transition: 0.3s;
+            text-shadow: black 1px;
+            display:block;
+            }
+        .botao a {  
+        font: bold 12px/24px 'Times New Roman', Times, serif;	
+        text-decoration: none;
+        text-align:center;	
+        color: rgb(117, 117, 117);
+        background: rgb(185, 185, 185);
+        width: 300px;  
+        height: 70px;	
+        display:block;
+        font-size: 17px;
+        border-radius: 5px;      
+	    } 
+        .botao a:hover { 
+            background: #ca0b0b;
+            transition: 0.5s;
+            color:#fff;    
+            display:block;        
+}
         #centro{
             display: inline-block;
             margin-left: auto;
@@ -128,6 +168,7 @@ ul li a:hover{
   margin-left: 20px;
   text-align: center;
   border:solid 1px rgb(185, 185, 185);
+  display: inline-block;
 }
 h2{
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
@@ -144,7 +185,7 @@ h5{
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   color: black;
   font-size: 25px;
-  border: solid 1px rgb(185, 185, 185);
+  margin-top: 10px;
   margin-top: center;
 }
 h6{
@@ -264,85 +305,78 @@ span{
             </div>
           </nav>
     </div> <br> 
-    <!--Filtragem-->
-    <div class="pos-f-t">
-        <div class="collapse" id="navbarToggleExternalContent" >
-          <div class="" style="background-color: #d9d9d9;">
-            <form>
-            <h1 style="color: black;"> Escolha a Marca: </h1>
-            <!--DIV MARCAS-->
-            <div class="abraço" style="display: flex; text-align: left;">
-              <p class="botao2" id="centro">      
-                <a href="#" title="BMW"><img src="Imagens/bmwx6/logo.png" height="80px" style="margin-top: 5px;"> </a>       
-            </p>
 
-            <p class="botao2" id="centro">      
-              <a href="#" title="Chevrolet"><img src="https://logosmarcas.net/wp-content/uploads/2021/04/Chevrolet-Logo.png" height="80px" style="margin-top: 5px;"> </a>       
-           </p>
+      <!--Conteúdo-->
+			<center>		
+				<?php
+				//Receber o número da página
+				$pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);		
+				$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
+				
+				//Setar a quantidade de itens por pagina
+				$qnt_result_pg = 6;
+				
+				//calcular o inicio visualização
+				$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
 
-           <p class="botao2" id="centro">      
-            <a href="#" title="Lamburguine"><img src="https://logosmarcas.net/wp-content/uploads/2021/04/Lamborghini-Logo.png" height="80px" style="margin-top: 5px;"> </a>       
-         </p>
+        //Bando de dados
+				$result_usuarios = "SELECT * FROM veiculos WHERE qm=0 LIMIT $inicio, $qnt_result_pg";
+				$resultado_usuarios = mysqli_query($conn, $result_usuarios);
+				while($rows_cursos = mysqli_fetch_assoc($resultado_usuarios)){
+				  $categoria_id = $rows_cursos['modelo'];
+          $result_categorias = "SELECT * FROM imagens WHERE nome = '$categoria_id'";
+          $resultado_categorias = mysqli_query($conn, $result_categorias);
+          while ($rows_categorias = mysqli_fetch_array($resultado_categorias)) {            
+          ?>
+            <div class="car">
+              <h2> <?php echo $rows_cursos['modelo'];?></h2> 
+              <h4> xdrive40i m sport </h4>
+              <br> 
+              <?php echo "<img src='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_categorias['imagem']."' style='height: 130px;'>";?> 
+              <h5> R$ 662.950 <br><p style="color: gray; font-size: 20px;"> 0Km - Ano: 2020</p></h5>
+              <img src="http://localhost/DealerTech/Imagens/bmwx6/logo.png" style="height: 60px;"/>
+                          
+              <p class="botao" id="centro" style="margin-top:20px">
+              <?php echo "<a href='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_cursos['modelo'].".php"."'style='font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;'><br> <b> <i class='fas fa-eye'></i> Ver Carro </a>";?>       
+              </p>
+            </div>	
+				<?php
+          }
+				}
+				?>
+				<br>
+				<?php
+				//Paginação - Somar a quantidade de usuários
+				$result_pg = "SELECT COUNT(id) AS num_result FROM veiculos";
+				$resultado_pg = mysqli_query($conn, $result_pg);
+				$row_pg = mysqli_fetch_assoc($resultado_pg);
+				//echo $row_pg['num_result'];
+				//Quantidade de pagina 
+				$quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
+				
+				//Limitar os link antes depois
+				$max_links = 3;
+				echo "<a href='gerenciar_clientes.php?pagina=1'>Primeira</a> ";
+				
+				for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
+					if($pag_ant >= 1){
+						echo "<a href='gerenciar_clientes.php?pagina=$pag_ant'>$pag_ant</a> ";
+					}
+				}
+					
+				echo "$pagina ";
+				
+				for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
+					if($pag_dep <= $quantidade_pg){
+						echo "<a href='gerenciar_clientes.php?pagina=$pag_dep'>$pag_dep</a> ";
+					}
+				}
+				
+				echo "<a href='gerenciar_clientes.php?pagina=$quantidade_pg'>Ultima</a>";
+				
+				?>
+			</center>
 
-         <p class="botao2" id="centro">      
-          <a href="#" title="Ferrari"><img src="https://logodownload.org/wp-content/uploads/2017/05/ferrari-logo-8.png" height="80px" style="margin-top: 5px;"> </a>       
-       </p>
-
-       <p class="botao2" id="centro">      
-        <a href="#" title="Mercedes"><img src="https://promocaoreunidas.com.br/themes/lp-reunidas-veiculos-homolog/assets/images/mercedes-benz-logo.png" height="80px" style="margin-top: 5px;"> </a>       
-     </p>
-
-     <p class="botao2" id="centro">      
-      <a href="#" title="Porsche"><img src="https://logosmarcas.net/wp-content/uploads/2021/04/Porsche-Logo.png" height="80px" style="margin-top: 5px;"> </a>       
-    </p>
-
-    
-    <br> <br> <br> <br> <br>
-    
-            </div class="abraço">  
-    <h1 style="color: black;"> Selecione o modelo: </h1>
-    <select class="opicoes" name="select" style="margin-top: 10px; margin-left: 20px;">
-      <option value="valor1">xdrive40i m sport </option>
-      <option value="valor2" selected> xdrive40i m sport 2</option>
-      <option value="valor3"> xdrive40i m sport 3 s</option>
-    </select> <br> <br> 
-   <h1>Quilometragem: </h1>
-   <input class="checkbox" type="checkbox" name="Novo" id="Novo" style="margin-left: 20px;">
-   <label for="Novo" style="margin-left: 15px; font-family:Century Gothic, CenturyGothic, AppleGothic, sans-serif;"> Novo</label>
-   <br>
-   <input class="checkbox" type="checkbox" name="Usado" id="Usado" style="margin-left: 20px;">
-   <label for="Usado" style="margin-left: 15px; font-family:Century Gothic, CenturyGothic, AppleGothic, sans-serif;"> Usado</label>
-   <h1> Preço: </h1> <input class="preco" type="number" placeholder="Mínimo">
-                    <input class="preco" type="number" placeholder="Máximo"> <br> <br>
-
-   <h1> Ano: </h1> <input class="preco" type="number" placeholder="Mínimo">
-                    <input class="preco" type="number" placeholder="Máximo"> <br> <br>
-
-             <h1>Blindagem: </h1>
-                  <input class="checkbox" type="checkbox" name="Novo" id="Novo" style="margin-left: 20px;">
-                  <label for="Novo" style="margin-left: 15px; font-family:Century Gothic, CenturyGothic, AppleGothic, sans-serif;"> Sim</label>
-                  <br>
-                  <input class="checkbox" type="checkbox" name="Usado" id="Usado" style="margin-left: 20px;">
-                  <label for="Usado" style="margin-left: 15px; font-family:Century Gothic, CenturyGothic, AppleGothic, sans-serif;"> Não</label>       
-            <!--FIM: DIV MARCAS-->
-           </form>
-           <img src="Imagens/cavaloba.png" style="margin-left: 600px; margin-top: -450px">
-           
-          </div>
-        </div>
-        <nav class="navbar navbar-dark" style="background-color: #bb0000;">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" style="outline: none;">
-            <span class="navbar-toggler-icon"></span>
-            <h4 style="color:#fff;"> Filtros dos Veículos</h4>
-          </button>
-          
-          <img src="https://www.maschi.com.br/assets/userfiles/archives/5c94db4b65627.png" height="70px">
-          
-        </nav>
-      </div>
-      <br> <br>
-      <h1>olá mundo</h1> 
-    <!--Fim Filtragem-->
     <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>
     </body>	
 </html>

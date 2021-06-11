@@ -1,10 +1,5 @@
 <?php
-if (session_status() !== PHP_SESSION_ACTIVE) {
-	session_start();
-	$tipo = $_SESSION['usuarioNiveisAcessoId'];
-}else{
-	$tipo = "deslogado";
-}
+session_start();
 include_once("conexao.php");
 
 ?>
@@ -67,6 +62,13 @@ include_once("conexao.php");
 		</style>
 	</head>
 	<body style="background-color: white;">
+	<?php
+        if(isset($_SESSON['usuarioNiveisAcessoId'])){
+            $tipo = $_SESSION['usuarioNiveisAcessoId'];
+        }else{
+            $tipo="";
+        }
+		?>	
 	<div class="menu">
         <ul class=>
             <li> <a href="#" style="color: rgba(117, 2, 2, 0);"> </a></li> <!--Programação Orientada a Gambiarra-->

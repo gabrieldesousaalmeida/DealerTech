@@ -17,9 +17,8 @@ include_once("php/conexao.php");
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-		<link rel="stylesheet" type="text/css" href="css/veiculo.css" media="screen">
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-		<link href="css/unemstyle.css" rel="stylesheet">
+		
 		<style>
 		#centro{
         	display: inline-block;
@@ -242,11 +241,11 @@ h5{
                 ?>
                     <div class="car">
                         <h2> <?php echo $rows_cursos['modelo'];?></h2> 
-                        <h4> xdrive40i m sport </h4>
+                        <h4> <?php echo $rows_cursos['versao'];?> </h4>
                         <br> 
                         <?php echo "<img src='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_categorias['imagem']."' style='height: 130px;'>";?> 
-                        <h5> R$ 662.950 <br><p style="color: gray; font-size: 20px;"> 0Km - Ano: 2020</p></h5>
-                        <img src="Imagens/bmwx6/logo.png" style="height: 60px;"/>
+                        <h5> R$ 662.950 <br><p style="color: gray; font-size: 20px;"> <?php echo $rows_cursos['qm'];?>Km - Ano: <?php echo $rows_cursos['ano'];?></p></h5>
+                        <?php echo "<img src='http://localhost/DealerTech/Imagens/Marcas/".$rows_cursos['marca'].".png"."' style='height: 60px;'>";?>
                         
                         <p class="botao" id="centro" style="margin-top:20px">
                         <?php echo "<a href='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_cursos['modelo'].".php"."'style='font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;'><br> <b> <i class='fas fa-eye'></i> Ver Carro </a>";?>       

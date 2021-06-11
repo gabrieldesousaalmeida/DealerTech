@@ -110,16 +110,16 @@ include_once("php/conexao.php");
     </div>
          <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>
          <center>
-         <div class="cent"style="background: #fff; height: 350px; width: 900px;border-radius: 15px;">
+         <div class="cent"style="background: #fff; height: 350px; width: 900px;border-radius: 15px; margin-top: 0px">
          <h2 style="font-size: 50px;"> Selecione uma das opções: </h2>
          <p class="botao">
-            <a href="#" title="Meu Link"> <i class="fas fa-car-side"></i> Carros Novos</a>
+            <a href="php/comprar/carnovo.php" title="Meu Link"> <i class="fas fa-car-side"></i> Carros Novos</a>
          </p> <br> <br>
          <p class="botao">
-            <a href="#" title="Meu Link"> <i class="fas fa-car-crash"></i> Carros Semi-novos ou Usados</a>
+            <a href="php/comprar/carusado_semi.php" title="Meu Link"> <i class="fas fa-car-crash"></i> Carros Semi-novos ou Usados</a>
          </p> <br> <br>
          <p class="botao">
-            <a href="#" title="Meu Link"> <i class="fas fa-pencil-alt"></i> Busca Avançada</a>
+            <a href="buscaavançada.php" title="Meu Link"> <i class="fas fa-pencil-alt"></i> Busca Avançada</a>
          </p>
         </div>
         </center>
