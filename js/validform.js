@@ -51,6 +51,22 @@ function deletar(){
     return false;
   }
 }
+function deletar_not(){
+  $resposta= confirm("As notificações selecionadas serão deletadas");
+  if($resposta==1){
+    alert("Notificações Deletadas Com Sucesso");
+  }else{
+    return false;
+  }
+}
+function ler_todas(){
+  $resposta= confirm("Todas as notificações serão marcadas como 'Lidas'");
+  if($resposta==1){
+    alert("Notificações marcadas como lidas");
+  }else{
+    return false;
+  }
+}
 function deletar_veiculo(){
   $resposta= confirm("O Veículo será Deletado");
   if($resposta==1){

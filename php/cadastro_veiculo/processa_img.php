@@ -60,6 +60,17 @@
 
 	copy($arquivo_origem, $arquivo_destino);
 
+	//NOTIFICAÇÃO
+	date_default_timezone_set("America/New_York");
+    $hora = date("h:i:sa");
+	$data = date("Y/m/d");
+	$title = "Novo Veículo Cadastrado";
+	$nota = "Um novo veículo foi cadastrado:";
+	$estado = "não_lida";
+	$campo = "Carros";
+	$result_not = "INSERT INTO notificacoes (title, nota, datas, hora, estado, campo) VALUES ('$title', '$nota', '$data', '$hora', '$estado', '$campo')";
+	$resultado_not = mysqli_query($conn, $result_not);
+
 	$_SESSION['mensagem1'] = "ok";
 	$_SESSION['msg'] = "";
     header("Location: http://localhost/DealerTech/admin/cadastrar_veiculo/cadastrar_veiculo.php");

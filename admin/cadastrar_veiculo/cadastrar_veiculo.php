@@ -12,7 +12,8 @@ session_start();
 	<link rel="icon" type="image/png" sizes="32x32" href="http://localhost/DealerTech/Imagens/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="http://localhost/DealerTech/Imagens/favicon-16x16.png">
 	<link rel="manifest" href="http://localhost/DealerTech/Imagens/site.webmanifest">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
+	<script src="http://localhost/DealerTech/js/jquery-1.3.2-vsdoc2.js"></script>	
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -135,7 +136,7 @@ session_start();
 	
 
 	<div id="dropDownSelect1"></div>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<?php
 	$red="a";
 	if(isset($_SESSION['mensagem1'])){

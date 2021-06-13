@@ -1,3 +1,7 @@
+<?php
+session_start();
+include_once('conexao.php');
+?>
 <!doctype html>
 <html>
     <head>
@@ -260,6 +264,18 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
         <header class="header" id="header" >
             <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
             <h3>Status do Sistema</h3>
+            <button class="btn-sm btn-dark" data-toggle="modal" data-target="#modalExemplo">
+                <i class="btn-lg fas fa-bell" style="color:red; margin-left:-12px;"></i>
+                <?php
+                $result_cursos = "SELECT COUNT(*) FROM notificacoes WHERE estado='não_lida'";
+                $resultado_cursos = mysqli_query($conn, $result_cursos);
+                while ($rows_cursos = mysqli_fetch_array($resultado_cursos)) {
+                ?>
+                <b style="color:red; margin-left:-13px;"><?php echo $rows_cursos[0];?></b>
+                <?php
+                }
+                ?>
+            </button>
             <div class="header_img"> <img src="http://localhost/DealerTech/Imagens/felipe.jfif" alt=""> </div>
         </header>
         <div class="l-navbar" id="nav-bar">
@@ -295,6 +311,86 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
             </div>
             <br><br>
             <!--Próxima aba-->
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Novas Notificações</h5>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <a href="http://localhost/DealerTech/admin/notificacoes.php">
+                        <button type="submit" class="btn btn-primary">
+                            Abrir Todas
+                        </button>
+                    </a>    
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="list-group">
+                
+                <?php
+                $result_cursos = "SELECT * FROM notificacoes WHERE estado='não_lida'";
+                $resultado_cursos = mysqli_query($conn, $result_cursos);
+                while ($rows_cursos = mysqli_fetch_array($resultado_cursos)) {
+                    //Modo de receber hora e data
+                    date_default_timezone_set("America/New_York");
+
+                    //Datas Atuais e registradas
+                    $data_fim1 = date("Y/m/d");
+                    $data_inicio = new DateTime($rows_cursos['datas']);
+                    $data_fim = new DateTime($data_fim1);
+
+                    //Horas Atuais e registradas
+                    $hora_antiga =strtotime($rows_cursos['hora']);
+                    $hora_atual1 = date("h:i:sa");
+                    $hora_atual = strtotime($hora_atual1);
+                    $intervalo  = abs($hora_atual - $hora_antiga);
+
+                    // Resgata diferença entre as datas
+                    $dateInterval = $data_inicio->diff($data_fim);
+                ?>
+                    <a href="#" class="border list-group-item list-group-item-action flex-column align-items-start ">
+                        <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><?php echo $rows_cursos['title'];?></h5>
+                        <small>
+                            <?php
+                            $diferença = $dateInterval->days; 
+                            if ($diferença==0){
+                                $minutos   = round($intervalo / 60, 2);
+                                $horas   = round($minutos / 60, 2);
+                                if($horas==0){
+                                    if($minutos==0){
+                                        echo "Diferença em segundos: $intervalo";
+                                    }else{
+                                        echo "Diferença em minutos: $minutos";
+                                    }
+                                }else{
+                                    echo "Diferença em horas: $horas";
+                                }
+                            }else{
+                                echo $dateInterval->days." dias atrás";
+                            }
+                        ?> 
+                        </small>
+                        </div>
+                        <p class="mb-1"><?php echo $rows_cursos['nota'];?></p>
+                        <small><?php echo $rows_cursos['campo'];?></small>
+                        <a style='text-decoration: none;' href=<?php echo "http://localhost/DealerTech/php/notificacoes/lida_not.php?id=".$rows_cursos['id'];?>>
+                            <button type="button" class="btn-sm btn-primary float-right" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura"><i class="fas fa-check-double"></i></button>
+                        </a>
+                    </a>
+                <?php
+                }
+                ?>
+                </div>
+            </div>
+            </div>
+        </div>
         </div>
         <!--Conteúdo da página-->
         <script src="http://localhost/DealerTech/js/spinner.js"></script>
