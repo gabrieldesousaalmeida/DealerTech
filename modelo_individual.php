@@ -258,6 +258,7 @@ h13{
         
 				while ($rows_cursos = mysqli_fetch_array($resultado_cursos)) {   
           $categoria_id = $rows_cursos['modelo'];
+          $modelo_compra = $rows_cursos['modelo']."_compra.php";
           $preço = $rows_cursos['preço'];
           $valor_tela = inteiro_decimal_br($preço);        
           $result_categorias = "SELECT * FROM imagens WHERE nome = '$categoria_id'";
@@ -273,7 +274,7 @@ h13{
         <h10>Motor 3,0 l 6 cilindros</h10>    
         <h2> Preço: <br> R$ <?php echo $valor_tela;?> </h2>  
         <p class="botao" id="centro" style="margin-top: 15px; margin-left: 728px;">       
-          <a href="#" title="" style="font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;"> <br> <b><i class="fas fa-shopping-cart"></i> Comprar </a>
+        <?php echo "<a href='$modelo_compra' title='' style='font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;'>";?> <br> <b><i class="fas fa-shopping-cart"></i> Comprar </a>
         </p>
         <div class="">
         <?php echo "<img src='http://localhost/DealerTech/Imagens/Marcas/".$rows_cursos['marca'].".png"."'height='350' style='margin-top: -240px; margin-left: 920px'>";?>

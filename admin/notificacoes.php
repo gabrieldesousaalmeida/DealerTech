@@ -13,6 +13,11 @@ include_once('conexao.php');
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/personalizado.css">
 
+        <link rel="apple-touch-icon" sizes="180x180" href="http://localhost/DealerTech/Imagens/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="http://localhost/DealerTech/Imagens/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="http://localhost/DealerTech/Imagens/favicon-16x16.png">
+        <link rel="manifest" href="http://localhost/DealerTech/Imagens/site.webmanifest">
+
         <script src="http://localhost/DealerTech/js/validform.js"></script>
         <script src="http://localhost/DealerTech/js/jquery-1.3.2-vsdoc2.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -278,7 +283,7 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
                 while ($rows_cursos = mysqli_fetch_array($resultado_cursos)) {
                     if($rows_cursos[0]!=0){
                 ?>
-                <i class="btn-lg fas fa-bell" style="color:red; margin-left:-12px;"></i>
+                <i class="btn-lg fas fa-bell" style="color:red; margin-left:-10px;"></i>
                 <b style="color:red; margin-left:-13px;"><?php echo $rows_cursos[0];?></b>
                 <?php
                     }else{
@@ -302,7 +307,7 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
                         <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-user nav_icon'style="color:red;"></i> <span class="nav_name">Usuários</span> </a>  
                         <a href="http://localhost/DealerTech/admin/eventos/eventos.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-bookmark nav_icon'style="color:red;"></i> <span class="nav_name">Eventos</span> </a>                         
                         <a href="http://localhost/DealerTech/admin/vendas.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'style="color:red;"></i> <span class="nav_name">Vendas</span> </a>
-                        <a href="http://localhost/DealerTech/admin/gerenciar_promocoes.php" style="color: white;text-decoration:none;" class="nav_link active"> <i class="fas fa-bell" style="color:red;"></i> <span class="nav_name">Notificações</span> </a>
+                        <a href="http://localhost/DealerTech/admin/notificacoes.php" style="color: white;text-decoration:none;" class="nav_link active"> <i class="fas fa-bell" style="color:red;"></i> <span class="nav_name">Notificações</span> </a>
                         <div class="esp" style="height: 3rem;"></div>
                         <a href="http://localhost/DealerTech/php/login_usuario/sair.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-log-out nav_icon'style="color:red;"></i> <span class="nav_name">Sair</span> </a> 
                     </div>
@@ -325,7 +330,15 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
 					$('#meuModal').modal('show');
 				});
 			</script>
-			<?php 
+			<?php
+            }
+            if($red == "negativo"){ ?>
+                <script>
+                    $(document).ready(function(){
+                        $('#meuModal5').modal('show');
+                    });
+                </script>
+            <?php 
             } 
             unset(
                 $_SESSION['confirm']
@@ -342,6 +355,25 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
             </div>
             <div class="modal-body">
                 As notificações selecionadas foram deletadas
+            </div>
+            <div class="modal-footer">
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Modal 1.5/ delet-->
+        <div class="modal fade" id="meuModal5" tabindex="-1" role="dialog" aria-labelledby="meuModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Falha na exclusão</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Nenhum item foi selecionado!
             </div>
             <div class="modal-footer">
             </div>
@@ -456,7 +488,7 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
                                 <?php
                                 }else if($rows_cursos['campo']=="Carros"){
                                 ?>
-                                <a style='text-decoration: none; margin-right:10px;' class="float-right" href="">
+                                <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style='text-decoration: none; margin-right:10px;' class="float-right" href="">
                                     <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
                                         <i class="fas fa-car-side"></i>
                                     </button>
@@ -464,7 +496,7 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
                                 <?php
                                 }else if($rows_cursos['campo']=="Cadastro"){
                                 ?>
-                                <a style='text-decoration: none; margin-right:10px;' class="float-right" href="">
+                                <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style='text-decoration: none; margin-right:10px;' class="float-right" href="">
                                     <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
                                         <i class="fas fa-user"></i>
                                     </button>
@@ -472,9 +504,17 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
                                 <?php
                                 }else if($rows_cursos['campo']=="evento"){
                                     ?>
-                                    <a style='text-decoration: none; margin-right:10px;' class="float-right" href="">
+                                    <a href="http://localhost/DealerTech/admin/eventos/eventos.php" style='text-decoration: none; margin-right:10px;' class="float-right" href="">
                                         <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
                                             <i class="fas fa-user"></i>
+                                        </button>
+                                    </a>
+                                    <?php
+                                }else if($rows_cursos['campo']=="Vendas"){
+                                    ?>
+                                    <a href="http://localhost/DealerTech/admin/vendas.php" style='text-decoration: none; margin-right:10px;' class="float-right" href="">
+                                        <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Ir para Vendas">
+                                            <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
                                         </button>
                                     </a>
                                     <?php
@@ -615,7 +655,54 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
                             }
                         ?> 
                     </td>
-                    <td><?php echo $rows_nota2['campo'];?></td>
+                    <td>
+                    <?php
+                                if($rows_nota2['campo']=="comentarios"){
+                                ?>
+                                <a style='text-decoration: none; margin-left:7px;' >
+                                    <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
+                                        <i class="fas fa-comments"></i>
+                                    </button>
+                                </a>   
+                                <?php
+                                }else if($rows_nota2['campo']=="Carros"){
+                                ?>
+                                <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style='text-decoration: none; margin-left:7px;'>
+                                    <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
+                                        <i class="fas fa-car-side"></i>
+                                    </button>
+                                </a>
+                                <?php
+                                }else if($rows_nota2['campo']=="Cadastro"){
+                                ?>
+                                <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style='text-decoration: none;margin-left:7px;'>
+                                    <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
+                                        <i class="fas fa-user"></i>
+                                    </button>
+                                </a>
+                                <?php
+                                }else if($rows_nota2['campo']=="evento"){
+                                    ?>
+                                    <a href="http://localhost/DealerTech/admin/eventos/eventos.php" style='text-decoration: none;margin-left:7px;'>
+                                        <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
+                                            <i class="fas fa-user"></i>
+                                        </button>
+                                    </a>
+                                    <?php
+                                }else if($rows_nota2['campo']=="Vendas"){
+                                    ?>
+                                    <a href="http://localhost/DealerTech/admin/vendas.php" style='text-decoration: none; margin-left:7px;'>
+                                        <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Ir para Vendas">
+                                            <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+                                        </button>
+                                    </a>
+                                    <?php
+                                }else{
+                                ?>
+                                <?php
+                                }
+                            ?>
+                    </td>
                     <td>
                         <a style='text-decoration: none;' href=<?php echo "http://localhost/DealerTech/php/notificacoes/lida_not.php?id=".$rows_nota2['id'];?>>
                             <button type="button" class="btn-sm btn-primary" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura"><i class="fas fa-check-double"></i></button>
@@ -749,10 +836,57 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
                             }
                         ?> 
                     </td>
-                    <td><?php echo $rows_nota['campo'];?></td>
+                    <td>
+                    <?php
+                                if($rows_nota['campo']=="comentarios"){
+                                ?>
+                                <a style='text-decoration: none; margin-left:7px;' >
+                                    <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
+                                        <i class="fas fa-comments"></i>
+                                    </button>
+                                </a>   
+                                <?php
+                                }else if($rows_nota['campo']=="Carros"){
+                                ?>
+                                <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style='text-decoration: none; margin-left:7px;'>
+                                    <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
+                                        <i class="fas fa-car-side"></i>
+                                    </button>
+                                </a>
+                                <?php
+                                }else if($rows_nota['campo']=="Cadastro"){
+                                ?>
+                                <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style='text-decoration: none;margin-left:7px;'>
+                                    <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
+                                        <i class="fas fa-user"></i>
+                                    </button>
+                                </a>
+                                <?php
+                                }else if($rows_nota['campo']=="evento"){
+                                    ?>
+                                    <a href="http://localhost/DealerTech/admin/eventos/eventos.php" style='text-decoration: none;margin-left:7px;'>
+                                        <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
+                                            <i class="fas fa-user"></i>
+                                        </button>
+                                    </a>
+                                    <?php
+                                }else if($rows_nota['campo']=="Vendas"){
+                                    ?>
+                                    <a href="http://localhost/DealerTech/admin/vendas.php" style='text-decoration: none; margin-left:7px;'>
+                                        <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Ir para Vendas">
+                                            <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+                                        </button>
+                                    </a>
+                                    <?php
+                                }else{
+                                ?>
+                                <?php
+                                }
+                            ?>
+                    </td>
                     <td>
                     <center>
-                        <div class="form-check align-items-center" >
+                        <div class="form-check">
                             <input class="form-check-input btn-lg marcar" name=<?php echo "id[$id]"?> type="checkbox" value="" id="flexCheckDefault">
                         </div>
                     </center>    

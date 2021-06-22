@@ -288,12 +288,12 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
                         <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='fas fa-car'style="color:red;"></i> <span class="nav_name">Veículos</span> </a>
                         <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-user nav_icon'style="color:red;"></i> <span class="nav_name">Usuários</span> </a>  
                         <a href="http://localhost/DealerTech/admin/eventos/eventos.php" style="color: white;text-decoration:none;" class="nav_link active"> <i class='bx bx-bookmark nav_icon'style="color:red;"></i> <span class="nav_name">Eventos</span> </a>                         
-                        <a href="http://localhost/DealerTech/admin/vendas.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'style="color:red;"></i> <span class="nav_name">Vendas</span> </a>
-                        <a href="http://localhost/DealerTech/admin/gerenciar_promocoes.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='fas fa-money-bill'style="color:red;"></i> <span class="nav_name">Promoções</span> </a>
+                        <a href="http://localhost/DealerTech/admin/vendas.php" style="color: white;text-decoration:none;" class="nav_link "> <i class='bx bx-bar-chart-alt-2 nav_icon'style="color:red;"></i> <span class="nav_name">Vendas</span> </a>
+                        <a href="http://localhost/DealerTech/admin/notificacoes.php" style="color: white;text-decoration:none;" class="nav_link "> <i class="fas fa-bell" style="color:red;"></i> <span class="nav_name">Notificações</span> </a>
                         <div class="esp" style="height: 3rem;"></div>
                         <a href="http://localhost/DealerTech/php/login_usuario/sair.php" style="color: white;text-decoration:none;" class="nav_link"> <i class='bx bx-log-out nav_icon'style="color:red;"></i> <span class="nav_name">Sair</span> </a> 
                     </div>
-                </div> 
+                </div>
             </nav>
         </div>
         <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>
@@ -328,6 +328,9 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
 
                                 <dt class="col-sm-3">Fim do evento</dt>
                                 <dd class="col-sm-9" id="end"></dd>
+
+                                <dt class="col-sm-3">Link da Reunião</dt>
+                                <dd class="col-sm-9" id="link"></dd>
                             </dl>
                             <button class="btn btn-warning btn-canc-vis">Editar</button>
                             <a href="" id="apagar_evento" class="btn btn-danger">Apagar</a>

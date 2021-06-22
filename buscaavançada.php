@@ -310,77 +310,42 @@ span{
         <div class="collapse" id="navbarToggleExternalContent" >
           <div class="" style="background-color: #d9d9d9;">
             <form method="POST" action="">
-              <h1 style="color: black;"> Escolha a Marca: </h1>
-              <!--DIV MARCAS-->
-              <div class="abraço" style="display: flex; text-align: left;">
-                <p class="botao2" id="centro">      
-                  <a href="#" title="BMW"><img src="Imagens/bmwx6/logo.png" height="80px" style="margin-top: 5px;"> </a>       
-                </p>
-
-                <p class="botao2" id="centro">      
-                  <a href="#" title="Chevrolet"><img src="https://logosmarcas.net/wp-content/uploads/2021/04/Chevrolet-Logo.png" height="80px" style="margin-top: 5px;"> </a>       
-                </p>
-
-                <p class="botao2" id="centro">      
-                  <a href="#" title="Lamburguine"><img src="https://logosmarcas.net/wp-content/uploads/2021/04/Lamborghini-Logo.png" height="80px" style="margin-top: 5px;"> </a>       
-                </p>
-
-                <p class="botao2" id="centro">      
-                  <a href="#" title="Ferrari"><img src="https://logodownload.org/wp-content/uploads/2017/05/ferrari-logo-8.png" height="80px" style="margin-top: 5px;"> </a>       
-                </p>
-
-                <p class="botao2" id="centro">      
-                  <a href="#" title="Mercedes"><img src="https://promocaoreunidas.com.br/themes/lp-reunidas-veiculos-homolog/assets/images/mercedes-benz-logo.png" height="80px" style="margin-top: 5px;"> </a>       
-                </p>
-
-                <p class="botao2" id="centro">      
-                  <a href="#" title="Porsche"><img src="https://logosmarcas.net/wp-content/uploads/2021/04/Porsche-Logo.png" height="80px" style="margin-top: 5px;"> </a>       
-                </p>
-                
-                <br> <br> <br> <br> <br>
-              </div class="abraço">  
-              <!--FIM: DIV MARCAS-->
-
-              <!--MODELO FILT-->
-              <h1 style="color: black;"> Selecione o modelo: </h1>
-              <select class="opicoes" name="modelo" style="margin-top: 10px; margin-left: 20px;">
-                <option value="valor1">xdrive40i m sport </option>
-                <option value="valor2" selected> xdrive40i m sport 2</option>
-                <option value="valor3"> xdrive40i m sport 3 s</option>
-              </select> <br> <br>
-              <!--/MODELO FILT-->
               
+              <br>
               <!--Qui FILT-->
+             
               <h1>Quilometragem: </h1>
-              <input class="checkbox" type="checkbox" name="Novo" id="Novo" style="margin-left: 20px;">
+              <input class="checkbox" type="checkbox" name="quilo" value="Novo" style="margin-left: 20px;">
               <label for="Novo" style="margin-left: 15px; font-family:Century Gothic, CenturyGothic, AppleGothic, sans-serif;"> Novo</label>
               <br>
-              <input class="checkbox" type="checkbox" name="Usado" id="Usado" style="margin-left: 20px;">
+              <input class="checkbox" type="checkbox" name="quilo" value="Usado" style="margin-left: 20px;">
               <label for="Usado" style="margin-left: 15px; font-family:Century Gothic, CenturyGothic, AppleGothic, sans-serif;"> Usado</label>
               <!--/Qui FILT-->
 
               <!--Preço FILT-->
-              <h1> Preço: </h1> <input class="preco" type="number" placeholder="Mínimo">
-              <input class="preco" type="number" placeholder="Máximo"> <br> <br>
+              <h1> Preço: </h1> 
+              <input class="preco" type="number" name="minimo" placeholder="Mínimo">
+              <input class="preco" type="number" name="maximo" placeholder="Máximo"> <br><br>
               <!--/Preço FILT-->
 
               <!--Ano FILT-->
-              <h1> Ano: </h1> <input class="preco" type="number" placeholder="Mínimo">
-              <input class="preco" type="number" placeholder="Máximo"> <br> <br>
+              <h1> Ano: </h1> 
+              <input class="preco" type="number" name="ano_minimo" placeholder="Mínimo">
+              <input class="preco" type="number" name="ano_maximo" placeholder="Máximo"> <br><br>
               <!--/Ano FILT-->
 
               <!--Blindagem FILT-->
               <h1>Blindagem: </h1>
-              <input class="checkbox" type="checkbox" name="Novo" id="Novo" style="margin-left: 20px;">
+              <input class="checkbox" type="checkbox" name="blindagem" value="Sim" style="margin-left: 20px;">
               <label for="Novo" style="margin-left: 15px; font-family:Century Gothic, CenturyGothic, AppleGothic, sans-serif;"> Sim</label>
               <br>
-              <input class="checkbox" type="checkbox" name="Usado" id="Usado" style="margin-left: 20px;">
+              <input class="checkbox" type="checkbox" name="blindagem" value="Não" style="margin-left: 20px;">
               <label for="Usado" style="margin-left: 15px; font-family:Century Gothic, CenturyGothic, AppleGothic, sans-serif;"> Não</label>       
               <!--/Blindagem FILT-->
               <br><br>
               <!--Filtrar FILT-->
               <p class="botao3" id="centro" style="margin-left:15px;">      
-                  <a href="#"> Filtrar </a>       
+                  <button type="submit" name="botao" value="negativo" style="border: none; background-color: Transparent;"><a> Filtrar </a></button>     
               </p>
               <!--/Filtrar FILT-->
               
@@ -399,8 +364,62 @@ span{
           
         </nav>
       </div>
+      <br>
       <!--Fim Filtragem-->
+      <h1 style="color: black;"> Escolha a Marca: </h1>
+            <form method="POST" action=""> 
+              <!--DIV MARCAS-->
+              <div class="abraço" style="display: flex; text-align: left;">
+                <p class="botao2" id="centro">      
+                  <a title="BMW" ><button type="submit" name="marca" value="BMW" style="border: none;background-color: Transparent;"><img src="Imagens/bmwx6/logo.png" height="80px" style="margin-top: 5px;"></button> </a>       
+                </p>
 
+                <p class="botao2" id="centro">      
+                  <a  title="Chevrolet"><button type="submit" name="marca" value="Chevrolet" style="border: none;background-color: Transparent;"><img src="https://logosmarcas.net/wp-content/uploads/2021/04/Chevrolet-Logo.png" height="80px" style="margin-top: 5px;"></button> </a>       
+                </p>
+
+                <p class="botao2" id="centro">      
+                  <a title="Lamburguine"><button type="submit" name="marca" value="Lamburguine" style="border: none;background-color: Transparent;"><img src="https://logosmarcas.net/wp-content/uploads/2021/04/Lamborghini-Logo.png" height="80px" style="margin-top: 5px;"></button> </a>       
+                </p>
+
+                <p class="botao2" id="centro">      
+                  <a title="Ferrari"><button type="submit" name="marca" value="Ferrari" style="border: none;background-color: Transparent;"><img src="https://logodownload.org/wp-content/uploads/2017/05/ferrari-logo-8.png" height="80px" style="margin-top: 5px;"></button> </a>       
+                </p>
+
+                <p class="botao2" id="centro">      
+                  <a title="Mercedes"><button type="submit" name="marca" value="Mercedes" style="border: none;background-color: Transparent;"><img src="https://promocaoreunidas.com.br/themes/lp-reunidas-veiculos-homolog/assets/images/mercedes-benz-logo.png" height="80px" style="margin-top: 5px;"></button> </a>       
+                </p>
+
+                <p class="botao2" id="centro">      
+                  <a title="Porsche"><button type="submit" name="marca" value="Porsche" style="border: none;background-color: Transparent;"><img src="https://logosmarcas.net/wp-content/uploads/2021/04/Porsche-Logo.png" height="80px" style="margin-top: 5px;"></button> </a>       
+                </p>
+                
+                <br> <br> <br> <br> <br>
+              </div class="abraço"> 
+              
+              <!--FIM: DIV MARCAS-->
+              
+            
+              <!--MODELO FILT-->
+              <h1 style="color: black;"> Selecione o modelo: </h1>
+              <select class="opicoes" name="modelo" style="margin-top: 10px; margin-left: 20px;">
+                <option selected="selected" class="Country" style="display:none;">Modelo</option>
+                  <?php
+                  $marca1 = filter_input(INPUT_POST, 'marca', FILTER_SANITIZE_STRING);            
+                  $result_usuarios1 = "SELECT * FROM veiculos WHERE marca LIKE '$marca1'";
+                  $resultado_usuarios1 = mysqli_query($conn, $result_usuarios1);
+                  while($rows_cursos1 = mysqli_fetch_assoc($resultado_usuarios1)){
+                  ?>
+                    <option name="modelo" value="<?php echo $rows_cursos1['modelo'];?>"><?php echo $rows_cursos1['modelo']?></option>
+                  <?php
+                  }
+                  ?>
+                
+              </select> 
+              <p class="botao3" id="centro" style="margin-left:15px;">      
+                  <button type="submit" name="botao" value="positivo" style="border: none; background-color: Transparent;"><a> Buscar </a></button>     
+              </p>
+            </form>
       <!--Conteúdo-->
 			<center>		
 				<?php
@@ -409,45 +428,99 @@ span{
 				$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 				
 				//Setar a quantidade de itens por pagina
-				$qnt_result_pg = 6;
+				$qnt_result_pg = 12;
 				
 				//calcular o inicio visualização
 				$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
 
 				//Receber dados da filtragem
-				$marca = filter_input(INPUT_POST, 'marca', FILTER_SANITIZE_STRING);
-				$modelo = filter_input(INPUT_POST, 'modelo', FILTER_SANITIZE_STRING);
+        $botao = filter_input(INPUT_POST, 'botao', FILTER_SANITIZE_STRING);
+				
         $quilo = filter_input(INPUT_POST, 'quilo', FILTER_SANITIZE_STRING);
-        $preço = filter_input(INPUT_POST, 'preço', FILTER_SANITIZE_STRING);
-        $ano = filter_input(INPUT_POST, 'ano', FILTER_SANITIZE_STRING);
+        $preço_minimo = filter_input(INPUT_POST, 'minimo', FILTER_SANITIZE_STRING);
+        $preço_maximo = filter_input(INPUT_POST, 'maximo', FILTER_SANITIZE_STRING);
+        $ano_minimo = filter_input(INPUT_POST, 'ano_minimo', FILTER_SANITIZE_NUMBER_INT);
+        $ano_maximo = filter_input(INPUT_POST, 'ano_maximo', FILTER_SANITIZE_NUMBER_INT);
         $blindagem = filter_input(INPUT_POST, 'blindagem', FILTER_SANITIZE_STRING);
-
+        $cambio = filter_input(INPUT_POST, 'cambio', FILTER_SANITIZE_STRING);
         //Bando de dados
-				$result_usuarios = "SELECT * FROM veiculos WHERE marca LIKE '%$marca%' AND modelo LIKE '%$modelo%' LIMIT $inicio, $qnt_result_pg";
-				$resultado_usuarios = mysqli_query($conn, $result_usuarios);
-				while($rows_cursos = mysqli_fetch_assoc($resultado_usuarios)){
-				  $categoria_id = $rows_cursos['modelo'];
-          $result_categorias = "SELECT * FROM imagens WHERE nome = '$categoria_id'";
-          $resultado_categorias = mysqli_query($conn, $result_categorias);
-          while ($rows_categorias = mysqli_fetch_array($resultado_categorias)) {            
-          ?>
-            <div class="car">
-              <h2> <?php echo $rows_cursos['modelo'];?></h2> 
-              <h4> xdrive40i m sport </h4>
-              <br> 
-              <?php echo "<img src='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_categorias['imagem']."' style='height: 130px;'>";?> 
-              <h5> R$ 662.950 <br><p style="color: gray; font-size: 20px;"> 0Km - Ano: 2020</p></h5>
-              <img src="Imagens/bmwx6/logo.png" style="height: 60px;"/>
-                          
-              <p class="botao" id="centro" style="margin-top:20px">
-              <?php echo "<a href='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_cursos['modelo'].".php"."'style='font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;'><br> <b> <i class='fas fa-eye'></i> Ver Carro </a>";?>       
-              </p>
-            </div>	
-				<?php
+        if($botao=="negativo"){
+          $result_usuarios = "SELECT * FROM veiculos WHERE ano BETWEEN '%$ano_minimo%' AND '$ano_maximo'AND qm_estado LIKE '%$quilo%' AND blindagem LIKE '%$blindagem%' AND cambio LIKE '%$cambio%' LIMIT $inicio, $qnt_result_pg";
+          $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+          while($rows_cursos = mysqli_fetch_assoc($resultado_usuarios)){
+            $categoria_id = $rows_cursos['modelo'];
+            $result_categorias = "SELECT * FROM imagens WHERE nome = '$categoria_id'";
+            $resultado_categorias = mysqli_query($conn, $result_categorias);
+            while ($rows_categorias = mysqli_fetch_array($resultado_categorias)) {            
+            ?>
+              <div class="car">
+                <h2> <?php echo $rows_cursos['modelo'];?></h2> 
+                <h4> xdrive40i m sport </h4>
+                <br> 
+                <?php echo "<img src='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_categorias['imagem']."' style='height: 130px;'>";?> 
+                <h5> R$ 662.950 <br><p style="color: gray; font-size: 20px;"> 0Km - Ano: 2020</p></h5>
+                <img src="Imagens/bmwx6/logo.png" style="height: 60px;"/>
+                            
+                <p class="botao" id="centro" style="margin-top:20px">
+                <?php echo "<a href='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_cursos['modelo'].".php"."'style='font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;'><br> <b> <i class='fas fa-eye'></i> Ver Carro </a>";?>       
+                </p>
+              </div>	
+          <?php
+            }
           }
-				}
+        }else if($botao=='positivo'){
+          $modelo = filter_input(INPUT_POST, 'modelo', FILTER_SANITIZE_STRING);
+          $result_usuarios = "SELECT * FROM veiculos WHERE marca LIKE '%$marca1%' AND modelo LIKE '%$modelo%' LIMIT $inicio, $qnt_result_pg";
+          $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+          while($rows_cursos = mysqli_fetch_assoc($resultado_usuarios)){
+            $categoria_id = $rows_cursos['modelo'];
+            $result_categorias = "SELECT * FROM imagens WHERE nome = '$categoria_id'";
+            $resultado_categorias = mysqli_query($conn, $result_categorias);
+            while ($rows_categorias = mysqli_fetch_array($resultado_categorias)) {            
+            ?>
+              <div class="car">
+                <h2> <?php echo $rows_cursos['modelo'];?></h2> 
+                <h4> xdrive40i m sport </h4>
+                <br> 
+                <?php echo "<img src='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_categorias['imagem']."' style='height: 130px;'>";?> 
+                <h5> R$ 662.950 <br><p style="color: gray; font-size: 20px;"> 0Km - Ano: 2020</p></h5>
+                <img src="Imagens/bmwx6/logo.png" style="height: 60px;"/>
+                            
+                <p class="botao" id="centro" style="margin-top:20px">
+                <?php echo "<a href='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_cursos['modelo'].".php"."'style='font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;'><br> <b> <i class='fas fa-eye'></i> Ver Carro </a>";?>       
+                </p>
+              </div>	
+          <?php
+            }
+          }
+        }else{
+          $modelo = filter_input(INPUT_POST, 'modelo', FILTER_SANITIZE_STRING);
+          $result_usuarios = "SELECT * FROM veiculos WHERE marca LIKE '%$marca1%' LIMIT $inicio, $qnt_result_pg";
+          $resultado_usuarios = mysqli_query($conn, $result_usuarios);
+          while($rows_cursos = mysqli_fetch_assoc($resultado_usuarios)){
+            $categoria_id = $rows_cursos['modelo'];
+            $result_categorias = "SELECT * FROM imagens WHERE nome = '$categoria_id'";
+            $resultado_categorias = mysqli_query($conn, $result_categorias);
+            while ($rows_categorias = mysqli_fetch_array($resultado_categorias)) {            
+            ?>
+              <div class="car">
+                <h2> <?php echo $rows_cursos['modelo'];?></h2> 
+                <h4> xdrive40i m sport </h4>
+                <br> 
+                <?php echo "<img src='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_categorias['imagem']."' style='height: 130px;'>";?> 
+                <h5> R$ 662.950 <br><p style="color: gray; font-size: 20px;"> 0Km - Ano: 2020</p></h5>
+                <img src="Imagens/bmwx6/logo.png" style="height: 60px;"/>
+                            
+                <p class="botao" id="centro" style="margin-top:20px">
+                <?php echo "<a href='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_cursos['modelo'].".php"."'style='font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;'><br> <b> <i class='fas fa-eye'></i> Ver Carro </a>";?>       
+                </p>
+              </div>	
+          <?php
+            }
+          }
+        }
 				?>
-				<br>
+				<br><br>
 				<?php
 				//Paginação - Somar a quantidade de usuários
 				$result_pg = "SELECT COUNT(id) AS num_result FROM veiculos";

@@ -11,12 +11,15 @@ if (isset($carros_id['id'])) {
         $query_del_carro = "DELETE FROM notificacoes WHERE id = $id LIMIT 1";
         $result_del_carro = $conn->prepare($query_del_carro);
         $result_del_carro->execute();
-    }   
-	$_SESSION['confirm'] = "ok";
-	header("Location: http://localhost/DealerTech/admin/notificacoes.php");
+
+        $_SESSION['confirm'] = "ok";
+        header("Location: http://localhost/DealerTech/admin/notificacoes.php");
+    } 
+	
 }else{
-	$_SESSION['nen'] = "ok";
+	$_SESSION['confirm'] = "negativo";
 	header("Location: http://localhost/DealerTech/admin/notificacoes.php");
+	
 }
 
 ?>

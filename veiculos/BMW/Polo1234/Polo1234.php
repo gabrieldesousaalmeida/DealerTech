@@ -13,7 +13,12 @@ $modelo= basename($_SERVER['PHP_SELF'],'.php');
         <link rel="icon" type="image/png" sizes="32x32" href="http://localhost/DealerTech/Imagens/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="http://localhost/DealerTech/Imagens/favicon-16x16.png">
         <link rel="manifest" href="http://localhost/DealerTech/Imagens/site.webmanifest">
-    
+          <script src="http://localhost/DealerTech/js/jquery-1.3.2-vsdoc2.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         
         <!--bot css-->
@@ -420,13 +425,12 @@ h13{
         <h4 style="font-size: 23px;margin-left: 40px;color: #800000;text-align: right;margin-right: 40px;"><i>Câmbio:</i></h4><h4 style="font-size: 17px;margin-left: 40px;text-align: right;margin-right: 40px;">  Automático - 8 velocidades </h4> 
         <h4 style="font-size: 23px;margin-left: 40px;color: #800000;text-align: right;margin-right: 40px;"><i>Cor:</i></h4><h4 style="font-size: 17px;margin-left: 40px;text-align: right;margin-right: 40px;">  Cinza </h4> 
         <h4 style="font-size: 23px;margin-left: 40px;color: #800000;text-align: right;margin-right: 40px;"><i>Blindagem:</i></h4><h4 style="font-size: 17px;margin-left: 40px;text-align: right;margin-right: 40px;">  Não </h4> 
-	
-        <!--IMAGEM--> 
         
-        <!--FIM; IMAGEM-->
+        <!--IMAGEM-->
         <?php echo "<img class='ggimage' src='http://localhost/DealerTech/Imagens/Marcas/".$rows_cursos['marca'].".png"."' style='height: 80px; opacity: 0.5; margin-left: 624px; margin-top:0px;'>";?>
 	    
-      </div class="ficha">  
+      </div class="ficha">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
         <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
