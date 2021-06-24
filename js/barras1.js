@@ -4,10 +4,10 @@ google.charts.load('current', {'packages':['bar']});
         function drawStuff() {
             var data = new google.visualization.arrayToDataTable([
             ['', ''],
-            ["King's pawn (e4)", 44],
-            ["Queen's pawn (d4)", 31],
-            ["Knight to King 3 (Nf3)", 12],
-            ["Queen's bishop pawn (c4)", 10],
+            ["King's pawn (e4)", 46],
+            ["Queen's pawn (d4)", 20],
+            ["Knight to King 3 (Nf3)", 20],
+            ["Queen's bishop pawn (c4)", 20],
             ['Other', 3]
             ]);
 
@@ -19,7 +19,7 @@ google.charts.load('current', {'packages':['bar']});
                 0: { side: 'top', label: ''} // Top x-axis.
                 }
             },
-            bar: { groupWidth: "90%" }
+            bar: { groupWidth: "" }
             };
 
             var chart = new google.charts.Bar(document.getElementById('top_x_div'));

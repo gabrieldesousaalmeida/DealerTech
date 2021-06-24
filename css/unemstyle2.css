@@ -1,0 +1,21 @@
+ul li a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 15px;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    color: #fff;
+    transition: .5s;
+}
+ul:hover li a{
+    transform: scale(1.0);
+    opacity: .5;
+    filter: blur(1px);
+}
+ul li a:hover{
+    transform: scale(0.96);
+    opacity: 1;
+    filter: blur(0);
+    color: black;
+}

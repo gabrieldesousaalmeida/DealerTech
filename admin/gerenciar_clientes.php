@@ -125,7 +125,7 @@ include_once("conexao.php");
 				$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 				
 				//Setar a quantidade de itens por pagina
-				$qnt_result_pg = 4;
+				$qnt_result_pg = 3;
 				
 				//calcular o inicio visualização
 				$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;

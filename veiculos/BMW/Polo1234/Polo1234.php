@@ -216,45 +216,12 @@ h13{
             $tipo="";
         }
 		?>	 
-        
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #800000;">
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/index.php" style="background-color: #fff; border-radius:5px; color: #800000;"> <i class="fas fa-home"> </i> Home <span class="sr-only">(current)</span> </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/comprar.php"> <i class="fas fa-dollar-sign"> </i> Comprar</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/carros.php"> <i class="fas fa-car"></i> Carros</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/contatos.php"> <i class="fas fa-phone-alt"></i> Contatos</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/sobre.php"> <i class="fas fa-clipboard"></i> Sobre Nós</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/sobre.php"> <i class="fas fa-question-circle"></i></i> Ajuda</a>
-                </li>
-              </ul>
-              <img src="http://localhost/DealerTech/Imagens/logof2.jpg" style="height: 40px;border-radius: 10px;">
-              <form class="form-inline my-2 my-lg-0">
-              </form>
-            </div>
-          </nav>
-      </div>
+        <br>
         <div class="carro"> 
         
         <?php
         function inteiro_decimal_br($numero){
-          $numero = number_format($numero, 2, ',', '.');
+          $numero = number_format($numero, 3, '.', '.');
           return $numero;
         }
 
@@ -276,13 +243,19 @@ h13{
         </p>
             <h5> Garanta já essa oferta! </h5>
         <h1><?php echo $rows_cursos['modelo']."<br>";?></h1>
-        <h10>Motor 3,0 l 6 cilindros</h10>    
+        <h10>Motor <?php echo $rows_cursos['motor'];?></h10>    
         <h2> Preço: <br> R$ <?php echo $valor_tela;?> </h2>  
         <p class="botao" id="centro" style="margin-top: 15px; margin-left: 728px;">       
         <?php echo "<a href='$modelo_compra' title='' style='font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;'>";?> <br> <b><i class="fas fa-shopping-cart"></i> Comprar </a>
         </p>
         <div class="">
-        <?php echo "<img src='http://localhost/DealerTech/Imagens/Marcas/".$rows_cursos['marca'].".png"."'height='350' style='margin-top: -240px; margin-left: 920px'>";?>
+        <?php echo "<img src='http://localhost/DealerTech/Imagens/Marcas/".$rows_cursos['marca'].".png"."'height='300' style='margin-top: -190px; margin-left: 1000px'>";?>
+        <div class="text-center p-t-136" style="margin-left:1100px; margin-top:20px; color:white;">
+            <?php echo "<a class='txt2' href='http://localhost/DealerTech/carros.php' style='color:white;text-decoration:none;'>";?>
+              Voltar a página anterior
+            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
         <!--Bot carrousel-->
         <center>
@@ -412,23 +385,22 @@ h13{
        <br> <br>
        <center>
        <h4>
-         BMW X6:
+       <?php echo $rows_cursos['marca'];?> <?php echo $rows_cursos['modelo'];?>:
          <hr> </hr>
          <hr> </hr>
       </h4> <br> 
       </center>
-        <h4 style="font-size: 23px;margin-left: 40px; color:#800000;"><i> Marca:</i> </h4> <h4 style="font-size: 17px;margin-left: 40px;"> BMW </h4> 
-        <h4 style="font-size: 23px;margin-left: 40px;color: #800000;"><i>Modelo: </i></h4> <h4 style="font-size: 17px;margin-left: 40px;"> xdrive40i m sport </h4> 
-        <h4 style="font-size: 23px;margin-left: 40px;color: #800000;"><i>Motor:</i></h4>  <h4 style="font-size: 17px;margin-left: 40px;"> 3,0 l 6 cilindros em linha 340 cv </h4> 
-        <h4 style="font-size: 23px;margin-left: 40px;color: #800000;"><i>Ano:</i></h4> <h4 style="font-size: 17px;margin-left: 40px;"> 2020 </h4> 
-		<h4 style="font-size: 23px;margin-left: 40px;color: #800000; text-align: right; margin-right: 40px;margin-top: -250px; "><i>Km:</i></h4><h4 style="font-size: 17px;margin-left: 40px;text-align: right;margin-right: 40px;">  0 Km  </h4> 
-        <h4 style="font-size: 23px;margin-left: 40px;color: #800000;text-align: right;margin-right: 40px;"><i>Câmbio:</i></h4><h4 style="font-size: 17px;margin-left: 40px;text-align: right;margin-right: 40px;">  Automático - 8 velocidades </h4> 
-        <h4 style="font-size: 23px;margin-left: 40px;color: #800000;text-align: right;margin-right: 40px;"><i>Cor:</i></h4><h4 style="font-size: 17px;margin-left: 40px;text-align: right;margin-right: 40px;">  Cinza </h4> 
-        <h4 style="font-size: 23px;margin-left: 40px;color: #800000;text-align: right;margin-right: 40px;"><i>Blindagem:</i></h4><h4 style="font-size: 17px;margin-left: 40px;text-align: right;margin-right: 40px;">  Não </h4> 
+        <h4 style="font-size: 23px;margin-left: 40px; color:#800000;"><i> Marca/Modelo:</i> </h4> <h4 style="font-size: 17px;margin-left: 40px;"><?php echo $rows_cursos['marca'];?> <?php echo $rows_cursos['modelo'];?></h4> 
+        <h4 style="font-size: 23px;margin-left: 40px;color: #800000;"><i>Versão: </i></h4> <h4 style="font-size: 17px;margin-left: 40px;"> <?php echo $rows_cursos['versao'];?> </h4> 
+        <h4 style="font-size: 23px;margin-left: 40px;color: #800000;"><i>Motor:</i></h4>  <h4 style="font-size: 17px;margin-left: 40px;"><?php echo $rows_cursos['motor'];?></h4> 
+        <h4 style="font-size: 23px;margin-left: 40px;color: #800000;"><i>Ano:</i></h4> <h4 style="font-size: 17px;margin-left: 40px;"><?php echo $rows_cursos['ano'];?></h4> 
+		<h4 style="font-size: 23px;margin-left: 40px;color: #800000; text-align: right; margin-right: 40px;margin-top: -250px; "><i>Km:</i></h4><h4 style="font-size: 17px;margin-left: 40px;text-align: right;margin-right: 40px;"><?php echo $rows_cursos['qm'];?> Km  </h4> 
+        <h4 style="font-size: 23px;margin-left: 40px;color: #800000;text-align: right;margin-right: 40px;"><i>Câmbio:</i></h4><h4 style="font-size: 17px;margin-left: 40px;text-align: right;margin-right: 40px;"><?php echo $rows_cursos['cambio'];?></h4> 
+        <h4 style="font-size: 23px;margin-left: 40px;color: #800000;text-align: right;margin-right: 40px;"><i>Cor:</i></h4><h4 style="font-size: 17px;margin-left: 40px;text-align: right;margin-right: 40px;"><?php echo $rows_cursos['cor'];?></h4> 
+        <h4 style="font-size: 23px;margin-left: 40px;color: #800000;text-align: right;margin-right: 40px;"><i>Blindagem:</i></h4><h4 style="font-size: 17px;margin-left: 40px;text-align: right;margin-right: 40px;"><?php echo $rows_cursos['blindagem'];?></h4> 
         
         <!--IMAGEM-->
-        <?php echo "<img class='ggimage' src='http://localhost/DealerTech/Imagens/Marcas/".$rows_cursos['marca'].".png"."' style='height: 80px; opacity: 0.5; margin-left: 624px; margin-top:0px;'>";?>
-	    
+        <?php echo "<img class='ggimage' src='http://localhost/DealerTech/Imagens/Marcas/".$rows_cursos['marca'].".png"."' style='height: 80px; opacity: 0.5; margin-left: 624px; margin-top:0px;'>";?> <br> <br>
       </div class="ficha">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
         <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>

@@ -77,7 +77,7 @@ $_SESSION['linhas'] = $qtde_linhas;
                                 <select class="input100" name="id_sub_categoria<?php echo $i;?>" id="id_sub_categoria<?php echo $i;?>" style="color: gray; outline: none; border: none;">
                                     <option selected="selected" class="Country" style="display:none;">Modelo</option>
                                     <?php            
-                                    $result_usuarios1 = "SELECT * FROM veiculos WHERE marca='Lamburguine'";
+                                    $result_usuarios1 = "SELECT * FROM veiculos WHERE marca='Lamborghini'";
                                     $resultado_usuarios1 = mysqli_query($conn, $result_usuarios1);
                                     while($rows_cursos1 = mysqli_fetch_assoc($resultado_usuarios1)){
                                     ?>

@@ -42,23 +42,8 @@
 						Caso você tenha solicitado uma redefinição <br> para o site: Saga Veículos de Luxo, click no botão abaixo. Se você não fez a solicitação, apenas ignore.
 					</h3>
 				<div class="cent"style="background: rgba(255, 255, 255, 0); height: 350px; width: 900px;border-radius: 15px; margin-top:20px;">
-					<a href="'.$link.'" title="" style="text-decoration: none; color:#fff;font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;">  
-						<button class="botao" style="font: bold 12px/24px "Times New Roman", Times, serif;padding:0px;
-					text-decoration: none;
-					text-align:center;	
-					color: #fff;
-					background: linear-gradient(rgb(3, 168, 3), rgb(2, 88, 2)); 	
-					width: 370px;  
-					height: 28px;	
-					display:block;
-					border-radius: 10px;
-					border-width: 2px;
-					border-style:solid;
-					border-color: rgb(2, 88, 2);
-					font-size: 20px;
-					text-decoration: none;">
-					   Redefinir Senha
-						</button>
+					<a href='.$link.' style="text-decoration: none; color:#fff;font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;">
+						<button style="background: linear-gradient(rgb(3, 168, 3), rgb(2, 88, 2));color: #fff;width: 370px;height: 28px;border-color: rgb(2, 88, 2);border-radius: 10px;border-width: 2px;font-size: 20px;">Redefinir Senha</button>
 					</a>
 				   </div>
 				</div>
@@ -93,9 +78,7 @@
                 Email de redefinição enviado com sucesso. Consulte a caixa de entrada dos seus emails por favor.
 			</div>
 			<div class="modal-footer">
-                <a href="http://localhost/DealerTech/index.php">
-				    <button type="button" class="btn2" data-dismiss="modal">Página Inicial</button>
-                </a>    
+				<button type="button" onclick="window.location.href='http://localhost/DealerTech/index.php'" class="btn2" data-dismiss="modal">Página Inicial</button>    
 			</div>
 			</div>
 		</div>

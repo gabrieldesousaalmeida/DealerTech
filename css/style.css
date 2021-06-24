@@ -110,6 +110,7 @@ body {
     background-color: red;
     border: 1px solid red;
     margin-top: 1rem;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 .btn2:hover{
     background-color: #fff;

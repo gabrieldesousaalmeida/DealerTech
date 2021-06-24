@@ -13,8 +13,9 @@ include_once("php/conexao.php");
         <link rel="icon" type="image/png" sizes="32x32" href="http://localhost/DealerTech/Imagens/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="http://localhost/DealerTech/Imagens/favicon-16x16.png">
         <link rel="manifest" href="http://localhost/DealerTech/Imagens/site.webmanifest">
-        
-        <link href="css/unemstyle.css" rel="stylesheet">	
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/unemstyle2.css" rel="stylesheet">	
     </head>	
     <style>
     #centro{
@@ -41,24 +42,25 @@ include_once("php/conexao.php");
         padding:0px;
     }
     .botao a {  
-        font: bold 12px/24px 'Times New Roman', Times, serif;	
+        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
         padding:0px;
         text-decoration: none;
         text-align:center;	
         color:#fff;
         background: red url('botao_link.gif')
         no-repeat center center;	
-        width: 370px;  
-        height: 28px;	
+        width: 450px;  
+        height: 38px;	
         display:block;
         border-radius: 5px;
         border-width: 2px;
         border-style:solid;
         border-color: red;
         font-size: 25px;
+        text-transform: uppercase;
 	}
     .botao a:hover { 
-        background: #fff url('botao_hover.gif') no-repeat 
+        background: #800000 url('botao_hover.gif') no-repeat 
         center center;
         color:red;
         transition: 0.2s;
@@ -76,50 +78,39 @@ include_once("php/conexao.php");
     }
     </style>
     <body>	
-    <div class="menu">
-        <ul class=>
-            <li> <a href="#" style="color: rgba(117, 2, 2, 0);"> </a></li> <!--Programação Orientada a Gambiarra-->
-            <li> <a href="http://localhost/DealerTech/index.php" title="Página Inicial"> <i class="fas fa-home"> </i> Home </a></li>
-            <li> <a href="http://localhost/DealerTech/comprar.php" style="background: #fff; color:rgb(117, 2, 2); border-radius: 3px;" title="Compre o seu carro de luxo"> <i class="fas fa-dollar-sign"> </i> Comprar </a></li>
-            <li> <a href="http://localhost/DealerTech/carros.php" title="Conheça os veículos de luxo"> <i class="fas fa-car"></i> Carros </a></li>
-            <li> <a href="http://localhost/DealerTech/contatos.php" title="Entre em Contato Conosco"> <i class="fas fa-phone-alt"></i> Contatos </a></li>
-            <li> <a href="http://localhost/DealerTech/sobre.php" title="Conheça a Empresa Saga Veículos de Luxo"> <i class="fas fa-clipboard"></i> Sobre Nós </a></li>
-			<?php
-            if(isset($_SESSION['usuarioNiveisAcessoId'])){
-                $tipo = $_SESSION['usuarioNiveisAcessoId'];
-            }else{
-                $tipo="";
-            }
-			if($tipo=="cliente"){
-			?>		
-				<li id="centro2" class="sair1"><a href="http://localhost/DealerTech/php/login_usuario/sair.php" title="Sair" style="font-size: 25px; margin-top: 0px;"><i class="fas fa-sign-out-alt"></i></a></li>	
-			<?php
-			}else if($tipo=="admin"){
-			?>	
-				<li id="centro2" class="oa"> <a href="http://localhost/DealerTech/admin/admin.php" title="Opções Administrativas" style="font-size: 22px; margin-top: 0px;"> <i class="fas fa-tools"></i> </a> </li>
-                <li id="centro2" class="sair"><a href="http://localhost/DealerTech/php/login_usuario/sair.php" title="Sair" style="font-size: 25px; margin-top: 0px;"><i class="fas fa-sign-out-alt"></i></a></li>	
-			<?php	
-			}else{
-			?>
-				<li id="centro2" class="oa"> <a href="http://localhost/DealerTech/login.php" title="Fazer Login" style="font-size: 22px; margin-top: 0px;"> <i class="fas fa-user-edit"></i></a></li>
-                <li id="centro2" class="sair"><a href="http://localhost/DealerTech/cadastro.php" title="Fazer Cadastro" style="font-size: 25px; margin-top: 0px;"><i class="fas fa-cog"></i></a></li>	
-			<?php
-			}
-			?>
-		</ul>
-    </div>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" style="box-shadow: gray 0px 3px 9px; background-color: white;;">
+            <div class="container px-4 px-lg-5">
+                 <img src="imagens/logored.png" style="height: 60px;"/>
+                <a class="navbar-brand" href="#page-top" style="color:red;">Saga Veículos de Luxo</a>
+                
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/comprar.php"><i class="fas fa-caret-right"></i> Comprar</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/carros.php">Carros</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/contatos.php">Contatos</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/sobre.php">Sobre Nós</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
          <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>
          <center>
-         <div class="cent"style="background: #fff; height: 350px; width: 900px;border-radius: 15px; margin-top: 0px">
+         <div class="cent"style="background: #fff; height: 350px; width: 900px;border-radius: 15px; margin-top: 200px; font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;">
          <h2 style="font-size: 50px;"> Selecione uma das opções: </h2>
          <p class="botao">
-            <a href="php/comprar/carnovo.php" title="Meu Link"> <i class="fas fa-car-side"></i> Carros Novos</a>
+            <a href="php/comprar/carnovo.php" title="Meu Link"> </i> Carros Novos</a>
          </p> <br> <br>
          <p class="botao">
-            <a href="php/comprar/carusado_semi.php" title="Meu Link"> <i class="fas fa-car-crash"></i> Carros Semi-novos ou Usados</a>
+            <a href="php/comprar/carusado_semi.php" title="Meu Link">  Carros Semi-novos ou Usados</a>
          </p> <br> <br>
          <p class="botao">
-            <a href="buscaavançada.php" title="Meu Link"> <i class="fas fa-pencil-alt"></i> Busca Avançada</a>
+            <a href="buscaavançada.php" title="Meu Link">  Busca Avançada</a>
          </p>
         </div>
         </center>

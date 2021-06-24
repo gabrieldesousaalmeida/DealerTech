@@ -21,16 +21,16 @@
         
         <div id="fb-root"></div>
     </head>
-    <body>
-        <div class="container">
+    <body style="background: lavender; font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;margin-left: 12%;">
+        <div class="container" style="margin-top: 6%;">
             <!--PARTE: second-content-->
-            <div class="content second-content" style="display: flex;"> 
+            <div class="content second-content" style="display: flex; height: 440px;"> 
                 <!--coluna 1-->
                 <div class="first-column">
                     <h2 class="title" style="color: #fff;"> Olá, Amigo!</h2>
                     <p class="description"> Insira seus dados pessoais </p>
                     <p class="description"> e comece a jornada conosco </p>
-                    <a href="http://localhost/DealerTech/cadastro.php"> <button class="btn" style="transition: 0.25s;"> Inscrever-se </button> </a>
+                    <a href="http://localhost/DealerTech/cadastro.php" style="font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;"> <button class="btn2" style="transition: 0.25s;font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif; border: 1px solid white;"> Inscrever-se </button> </a>
                 </div> 
                 <!--coluna 2-->
                 <div class="second-culumn"> 
@@ -41,7 +41,7 @@
                                 <span class="g-signin2" data-onsuccess="onSignIn" style="margin-top: 20px;"></span>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <p class="botao">
+                                <p class="botao" style="box-shadow: rgb(182, 182, 182) 1px 1px 0px;">
                                     <a href="<?php echo $loginUrl; ?>" title=""> <i class="fab fa-facebook-f" style="color: blue; width: 30px; heigth: 200px;"></i>   Facebook </a>
                                 </p>
                             </div>	
@@ -61,14 +61,14 @@
                     <form class="form" method="POST" action="php/login_usuario/valida.php" name="dados"> 
                         <label for="" class="label-input icon-modify">
                             <i class="far fa-envelope"></i>
-                            <input type="email" placeholder=" Email" style="box-shadow: 0 0 0 0;outline: 0;color: rgb(105, 99, 99); font-family: 'Times New Roman', Times, serif;" name="email">
+                            <input type="email" placeholder=" Email" style="box-shadow: 0 0 0 0;outline: 0;color: rgb(105, 99, 99); font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;" name="email">
                         </label>
                         <label for="" class="label-input icon-modify">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder=" Senha" style="box-shadow: 0 0 0 0;outline: 0;color: rgb(105, 99, 99); font-family: 'Times New Roman', Times, serif;" name="senha">
+                            <input type="password" placeholder=" Senha" style="box-shadow: 0 0 0 0;outline: 0;color: rgb(105, 99, 99); font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;" name="senha">
                         </label>
                         <a href="php/redefinir_senha/redefinir.php" style="color: #95a5a6;" data-toggle="modal" data-target="#exampleModal"> Esqueceu sua senha </a>
-                        <button class="btn2" style="transition: 0.25s;" onclick="ValidForm2()"> Entrar </button>
+                        <button class="btn2" style="transition: 0.25s;font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;" onclick="ValidForm2()"> Entrar </button>
                     </form>
                 </div> <!-- FIM: second colum-->
             </div> <!-- FIM: second content-->

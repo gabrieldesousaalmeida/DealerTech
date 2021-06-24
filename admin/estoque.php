@@ -763,7 +763,7 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
                     </td>
                     <td>
                     <?php
-                    $result_cursos1 = "SELECT SUM(qtde) as soma_Lamburguine FROM veiculos WHERE marca ='Lamburguine'";
+                    $result_cursos1 = "SELECT SUM(qtde) as soma_Lamborghini FROM veiculos WHERE marca ='Lamborghini'";
                     $resultado_cursos1 = mysqli_query($conn, $result_cursos1);
                     while ($rows_cursos3 = mysqli_fetch_array($resultado_cursos1)){
                         echo $rows_cursos3[0];
@@ -913,7 +913,7 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
             <button type="button" class="btn-sm btn-outline-success"><b><?php echo $rows_cursos[0];?></b></button>
             <b>Ferrari</b>
             <div class="float-right">
-                <button type="button" data-toggle="modal" data-target="#exampleModalCenter2" class="btn-sm btn-primary" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura"><i class="fas fa-network-wired"></i><b style="margin-left:4px;">Entrada de Veículos Ferrari</b></button>
+                <button type="button" data-toggle="modal" data-target="#exampleModalCenter3" class="btn-sm btn-primary" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura"><i class="fas fa-network-wired"></i><b style="margin-left:4px;">Entrada de Veículos Ferrari</b></button>
             </div>
             <?php
             $qtde=$rows_cursos[0];
@@ -955,14 +955,14 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
             <p>
             <div class="alert alert-success" role="alert">
             <?php
-            $result_cursos = "SELECT COUNT(*) FROM veiculos WHERE marca='Lamburguine'";
+            $result_cursos = "SELECT COUNT(*) FROM veiculos WHERE marca='Lamborghini'";
             $resultado_cursos = mysqli_query($conn, $result_cursos);
             while ($rows_cursos = mysqli_fetch_array($resultado_cursos)) {
             ?>
             <button type="button" class="btn-sm btn-outline-success"><b><?php echo $rows_cursos[0];?></b></button>
-            <b>Lamburguine</b>
+            <b>Lamborghini</b>
             <div class="float-right">
-                <button type="button" data-toggle="modal" data-target="#exampleModalCenter2" class="btn-sm btn-primary" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura"><i class="fas fa-network-wired"></i><b style="margin-left:4px;">Entrada de Veículos Lamburguine</b></button>
+                <button type="button" data-toggle="modal" data-target="#exampleModalCenter4" class="btn-sm btn-primary" data-toggle="tooltip" data-placement="right"><i class="fas fa-network-wired"></i><b style="margin-left:4px;">Entrada de Veículos Lamborghini</b></button>
             </div>
             <?php
             $qtde=$rows_cursos[0];
@@ -982,7 +982,7 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
             </thead>
             <tbody>
             <?php
-                $result_nota2 = "SELECT * FROM veiculos WHERE marca='Lamburguine';";
+                $result_nota2 = "SELECT * FROM veiculos WHERE marca='Lamborghini';";
                 $resultado_nota2 = mysqli_query($conn, $result_nota2);
                 $cont = 1;
                 while ($rows_nota2 = mysqli_fetch_array($resultado_nota2)) {
@@ -1011,7 +1011,7 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
             <button type="button" class="btn-sm btn-outline-success"><b><?php echo $rows_cursos[0];?></b></button>
             <b>Mercedes</b>
             <div class="float-right">
-                <button type="button" data-toggle="modal" data-target="#exampleModalCenter2" class="btn-sm btn-primary" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura"><i class="fas fa-network-wired"></i><b style="margin-left:4px;">Entrada de Veículos BMW</button>
+                <button type="button" data-toggle="modal" data-target="#exampleModalCenter5" class="btn-sm btn-primary" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura"><i class="fas fa-network-wired"></i><b style="margin-left:4px;">Entrada de Veículos Mercedes</button>
             </div>
             <?php
             $qtde=$rows_cursos[0];
@@ -1060,7 +1060,7 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
             <button type="button" class="btn-sm btn-outline-success"><b><?php echo $rows_cursos[0];?></b></button>
             <b>Porsche</b>
             <div class="float-right">
-                <button type="button" data-toggle="modal" data-target="#exampleModalCenter2" class="btn-sm btn-primary" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura"><i class="fas fa-network-wired"></i><b style="margin-left:4px;">Entrada de Veículos Mercedes</b></button>
+                <button type="button" data-toggle="modal" data-target="#exampleModalCenter6" class="btn-sm btn-primary" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura"><i class="fas fa-network-wired"></i><b style="margin-left:4px;">Entrada de Veículos Porsche</b></button>
             </div>
             <?php
             $qtde=$rows_cursos[0];

@@ -13,11 +13,245 @@ include_once('conexao.php');
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/personalizado.css">
 
+        <link rel="apple-touch-icon" sizes="180x180" href="http://localhost/DealerTech/Imagens/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="http://localhost/DealerTech/Imagens/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="http://localhost/DealerTech/Imagens/favicon-16x16.png">
+        <link rel="manifest" href="http://localhost/DealerTech/Imagens/site.webmanifest">
+            
         <!--Google Charts-->
         <script src="https://www.gstatic.com/charts/loader.js"></script>
-        <script src="http://localhost/DealerTech/js/barras1.js"></script>
-        <script src="http://localhost/DealerTech/js/barras2.js"></script>
-        <script src="http://localhost/DealerTech/js/barras3.js"></script>
+        
+        <!--Google Charts/ Vendas por Marca-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['BMW',     <?php
+            $result_cursos = "SELECT COUNT(*) FROM veiculos WHERE marca='BMW';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>],
+          ['Checrolet',      <?php
+            $result_cursos = "SELECT COUNT(*) FROM veiculos WHERE marca='Checrolet';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>],
+          ['Ferrari',  <?php
+            $result_cursos = "SELECT COUNT(*) FROM veiculos WHERE marca='Ferrari';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>],
+          ['Lamburguine', <?php
+            $result_cursos = "SELECT COUNT(*) FROM veiculos WHERE marca='Lamburguine';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>],
+          ['Mercedes', <?php
+            $result_cursos = "SELECT COUNT(*) FROM veiculos WHERE marca='Mercedes';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>],
+          ['Porsche',    <?php
+            $result_cursos = "SELECT COUNT(*) FROM veiculos WHERE marca='Porsche';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>]
+        ]);
+
+        var options = {
+          title: 'Quatidade de modelos cadastrados por marca',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+        <!--Google Charts/ Vendas por Marca-->
+        <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['BMW',     <?php
+            $result_cursos = "SELECT COUNT(*) FROM vendas WHERE estado='realizada' AND marca='BMW';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>],
+          ['Chevrolet',      <?php
+            $result_cursos = "SELECT COUNT(*) FROM vendas WHERE estado='realizada' AND marca='Chevrolet';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>],
+          ['Ferrari',  <?php
+            $result_cursos = "SELECT COUNT(*) FROM vendas WHERE estado='realizada' AND marca='Ferrari';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>],
+          ['Lamburguine', <?php
+            $result_cursos = "SELECT COUNT(*) FROM vendas WHERE estado='realizada' AND marca='Lamburguine';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>],
+          ['Mercedes',    <?php
+            $result_cursos = "SELECT COUNT(*) FROM vendas WHERE estado='realizada' AND marca='Mercedes';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>],
+          ['Porsche',    <?php
+            $result_cursos = "SELECT COUNT(*) FROM vendas WHERE estado='realizada' AND marca='Porsche';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>]
+        ]);
+
+        var options = {
+          title: 'Vendas Realizadas por Marca'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+
+      
+    </script>
+
+    <!--Google Charts/ ESTOQUE - Quantidade por marca-->
+      <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Quantidade", { role: "style" } ],
+        ["BMW", <?php
+            $result_cursos = "SELECT SUM(qtde) as soma_BMW FROM veiculos WHERE marca ='BMW'";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>, "#b87333"],
+        ["Chevrolet", <?php
+            $result_cursos = "SELECT SUM(qtde) as soma_BMW FROM veiculos WHERE marca ='Chevrolet'";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>, "silver"],
+        ["Ferrari", <?php
+            $result_cursos = "SELECT SUM(qtde) as soma_BMW FROM veiculos WHERE marca ='Ferrari'";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>, "gold"],
+        ["Lamburguine", <?php
+            $result_cursos = "SELECT SUM(qtde) as soma_BMW FROM veiculos WHERE marca ='Lamburguine'";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>, "green"],
+        ["Mercedes", <?php
+            $result_cursos = "SELECT SUM(qtde) as soma_BMW FROM veiculos WHERE marca ='Mercedes'";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>, "blue"],
+        ["Porsche", <?php
+            $result_cursos = "SELECT SUM(qtde) as soma_BMW FROM veiculos WHERE marca ='Porsche'";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>, "red"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Quantidade de veículos por marca",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+
+  <!--Google Charts/ Ganho por mês-->
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Realizadas", { role: "style" } ],
+        ["Mar", <?php
+            $result_cursos = "SELECT COUNT(*) FROM vendas WHERE estado='realizada' AND data_compra BETWEEN '2021-03-01' AND '2021-03-31';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>, "#b87333"],
+        ["Abr", <?php
+            $result_cursos = "SELECT COUNT(*) FROM vendas WHERE estado='realizada' AND data_compra BETWEEN '2021-04-01' AND '2021-04-31';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>, "silver"],
+        ["Maio", <?php
+            $result_cursos = "SELECT COUNT(*) FROM vendas WHERE estado='realizada' AND data_compra BETWEEN '2021-05-01' AND '2021-05-31';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>, "gold"],
+        ["Jun", <?php
+            $result_cursos = "SELECT COUNT(*) FROM vendas WHERE estado='realizada' AND data_compra BETWEEN '2021-06-01' AND '2021-06-31';";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)){
+                echo $rows_cursos[0];
+            }?>, "color: #e5e4e2"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Quantidade de Vendas realizadas por mês",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
         <!--/Google Charts-->
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
@@ -419,41 +653,49 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
                         </a>
                         <?php
                                 if($rows_cursos['campo']=="comentarios"){
-                                ?>
-                                <a style='text-decoration: none; margin-right:10px;' class="float-right" href="">
-                                    <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
-                                        <i class="fas fa-comments"></i>
-                                    </button>
-                                </a>   
-                                <?php
-                                }else if($rows_cursos['campo']=="Carros"){
-                                ?>
-                                <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style='text-decoration: none; margin-right:10px;' class="float-right" href="">
-                                    <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
-                                        <i class="fas fa-car-side"></i>
-                                    </button>
-                                </a>
-                                <?php
-                                }else if($rows_cursos['campo']=="Cadastro"){
-                                ?>
-                                <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style='text-decoration: none; margin-right:10px;' class="float-right" href="">
-                                    <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
-                                        <i class="fas fa-user"></i>
-                                    </button>
-                                </a>
-                                <?php
-                                }else if($rows_cursos['campo']=="evento"){
                                     ?>
-                                    <a href="http://localhost/DealerTech/admin/eventos/eventos.php" style='text-decoration: none; margin-right:10px;' class="float-right" href="">
+                                    <a style='text-decoration: none; margin-right:10px;' class="float-right" href="">
+                                        <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
+                                            <i class="fas fa-comments"></i>
+                                        </button>
+                                    </a>   
+                                    <?php
+                                    }else if($rows_cursos['campo']=="Carros"){
+                                    ?>
+                                    <a href="http://localhost/DealerTech/admin/gerenciar_veiculos.php" style='text-decoration: none; margin-right:10px;' class="float-right" href="">
+                                        <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
+                                            <i class="fas fa-car-side"></i>
+                                        </button>
+                                    </a>
+                                    <?php
+                                    }else if($rows_cursos['campo']=="Cadastro"){
+                                    ?>
+                                    <a href="http://localhost/DealerTech/admin/gerenciar_clientes.php" style='text-decoration: none; margin-right:10px;' class="float-right" href="">
                                         <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
                                             <i class="fas fa-user"></i>
                                         </button>
                                     </a>
                                     <?php
-                                }else{
-                                ?>
-                                <?php
-                                }
+                                    }else if($rows_cursos['campo']=="evento"){
+                                        ?>
+                                        <a href="http://localhost/DealerTech/admin/eventos/eventos.php" style='text-decoration: none; margin-right:10px;' class="float-right" href="">
+                                            <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Confirmar Leitura">
+                                                <i class="fas fa-user"></i>
+                                            </button>
+                                        </a>
+                                        <?php
+                                    }else if($rows_cursos['campo']=="Vendas"){
+                                        ?>
+                                        <a href="http://localhost/DealerTech/admin/vendas.php" style='text-decoration: none; margin-right:10px;' class="float-right" href="">
+                                            <button type="button" class="btn-sm btn-success" data-toggle="tooltip" data-placement="right" title="Ir para Vendas">
+                                                <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+                                            </button>
+                                        </a>
+                                        <?php
+                                    }else{
+                                    ?>
+                                    <?php
+                                    }
                             ?>
                         </a>
                     </c>
@@ -466,15 +708,116 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
         </div>
         </div>
         <!--Conteúdo-->
-        <div class="row">
-                <h4><b>Clientes</b></h4>
-                <div class="col-md-6 col-sm-12">
-                    <div id="top_x_div" style="width:25rem; height: 25rem;"></div>
+        <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+            <p>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <h4>Vendas</h4>
+                        <div id="columnchart_values" style="width:25rem; height: 25rem;"></div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                    <br>
+                        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total ganho Nesse Mês:</h5>
+                            <?php
+                            $data_fim_nao = date("Y/m/d");
+                            list($ano, $mes, $dia) = explode('/', $data_fim_nao);
+                            $mes_velho = date($ano."-".$mes."-01");
+                            $mes_novo = date($ano."-".$mes."-31");
+                            $result_cursos1 = "SELECT SUM(preço) as soma FROM vendas WHERE estado ='realizada' AND data_compra BETWEEN '$mes_velho' AND '$mes_novo';";
+                            $resultado_cursos1 = mysqli_query($conn, $result_cursos1);
+                            while ($rows_cursos1 = mysqli_fetch_array($resultado_cursos1)){
+                            ?>
+                            <p class="card-text">R$ <?php echo $rows_cursos1[0];?></p>
+                            <?php
+                            }?>
+                            
+                        </div>
+                        </div>
+  <br>
+                        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Quantidade de Vendas em Andamento:</h5>
+                            <?php
+                            $result_cursos = "SELECT COUNT(*) FROM vendas WHERE estado='em_andamento';";
+                            $resultado_cursos = mysqli_query($conn, $result_cursos);
+                            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)) {
+                            ?>
+                            <p class="card-text"><b><?php echo $rows_cursos[0];?></b></p>
+                            <?php
+                            }?>
+                            <a href="vendas.php" class="btn btn-danger">Vendas</a>
+                        </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
-                    <div id="barchart_material" style="width:25rem; height: 25rem;"></div>
+            </p>
+            
+            <p>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <h4>Veículos</h4>
+                        <div id="donutchart" style="width: 800px; height: 400px; margin-left:-100px;"></div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h4>Estoque</h4>
+                        <div id="barchart_values" style="width: 900px; height: 500px;"></div>
+                    </div>
                 </div>
+            </p>
+            
+            <p>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h4>Clientes</h4>
+                        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Quantidade de Clientes Cadastrados:</h5>
+                            <?php
+                            $result_cursos = "SELECT COUNT(*) FROM clientes WHERE niveis_acesso_id='cliente';";
+                            $resultado_cursos = mysqli_query($conn, $result_cursos);
+                            while ($rows_cursos = mysqli_fetch_array($resultado_cursos)) {
+                            ?>
+                            <p class="card-text"><b><?php echo $rows_cursos[0];?></b></p>
+                            <?php
+                            }
+                            ?>
+                            <a href="gerenciar_clientes.php" class="btn btn-danger">Gerenciar Clientes</a>
+                        </div>
+                        </div>
+<br>
+                        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Nesse mês:</h5>
+                            <?php
+                            $data_fim_nao = date("Y/m/d");
+                            list($ano, $mes, $dia) = explode('/', $data_fim_nao);
+                            $mes_velho = date($ano."-".$mes."-01");
+                            $mes_novo = date($ano."-".$mes."-31");
+                            $result_nota2 = "SELECT COUNT(*) FROM clientes WHERE niveis_acesso_id='cliente' AND created BETWEEN '$mes_velho' AND '$mes_novo';";
+                            $resultado_nota2 = mysqli_query($conn, $result_nota2);
+                            while ($rows_nota2 = mysqli_fetch_array($resultado_nota2)) {
+                            ?>  
+                                <p class="card-text"><b><?php echo  $rows_nota2[0];?></b></p>
+                            <?php
+                             
+                            }
+                            ?>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h4>Vendas</h4>
+                        <div id="piechart" style="width: 850px; height: 450px;"></div>
+                    </div>
+                </div>
+            </p>
         </div>
+       
+        
         <!--/Conteúdo-->
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

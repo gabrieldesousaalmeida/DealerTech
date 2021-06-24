@@ -62,14 +62,16 @@
 
 	//NOTIFICAÇÃO
 	date_default_timezone_set("America/New_York");
-    $hora = date("h:i:sa");
+    $hora2 = date("H:i:sa");
+	list($h, $m, $s) = explode(':', $hora2);
+	$hora1 = $h+1;
+	$hora = ($hora1.":".$m.":".$s);
 	$data = date("Y/m/d");
 	$title = "Novo Veículo Cadastrado";
 	$nota = "Um novo veículo foi cadastrado:".$marca." ".$modelo."";
 	$estado = "não_lida";
 	$campo = "Carros";
-	$link = "admin/gerenciar_veiculos.php";
-	$result_not = "INSERT INTO notificacoes (title, nota, datas, hora, estado, campo, link) VALUES ('$title', '$nota', '$data', '$hora', '$estado', '$campo', '$link')";
+	$result_not = "INSERT INTO notificacoes (title, nota, datas, hora, estado, campo) VALUES ('$title', '$nota', '$data', '$hora', '$estado', '$campo')";
 	$resultado_not = mysqli_query($conn, $result_not);
 
 	$_SESSION['mensagem1'] = "ok";

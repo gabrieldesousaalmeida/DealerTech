@@ -67,14 +67,8 @@ session_start();
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Digite o Modelo">
-						<select class="input100" name="cor" style="color: gray; outline: none; border: none;">
-							<option selected="selected" class="Country" style="display:none;">Cor</option>
-							<option value="valor1" style="background-color: blue;"> Azul </option>
-							<option value="valor2" style="background-color: red; "> Vermelho</option>
-							<option value="valor3" style="background-color: yellow;"> Amarelo</option>
-							<option value="valor4" style="background-color: green;"> Verde </option>
-							<option value="valor4" type="text"> Outro </option>
-						</select>
+						<input class="input100" type="text" name="cor" placeholder="Cor">
+						<span class="focus-input100"></span>
 					</div>
 
 					<script>
@@ -84,7 +78,7 @@ session_start();
 						}
 
 						function addCommas(value) {
-								return value.replace(/\B(?=(\d{2})+(?!\d))/g, '.');
+								return value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 						}
 
 					</script>

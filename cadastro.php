@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="http://localhost/DealerTech/css/style.css">
     <script type="text/javascript" src="http://localhost/DealerTech/js/validform.js"></script>
   </head>
-  <body>
-    <div class="container">
+  <body style="background: lavender; font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;margin-left: 12%;">
+    <div class="container" style="margin-top: 10%;">
         <!--PARTE: second-content-->
         <div class="content second-content" style="display: flex;"> 
              <!--coluna 1-->
@@ -34,15 +34,15 @@
                 <form class="form" name="dados" method="POST" action="http://localhost/DealerTech/php/salva_mensagem.php"> 
                     <label for="" class="label-input icon-modify">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" name="nome" placeholder="Nome" style="box-shadow: 0 0 0 0;outline: 0;color: rgb(105, 99, 99); font-family: 'Times New Roman', Times, serif;">
+                        <input type="text" name="nome" placeholder="Nome" style="box-shadow: 0 0 0 0;outline: 0;color: rgb(105, 99, 99); font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;">
                     </label>
                     <label for="" class="label-input icon-modify">
                         <i class="far fa-envelope"></i>
-                        <input type="email" name="email" placeholder=" Email" style="box-shadow: 0 0 0 0;outline: 0;color: rgb(105, 99, 99); font-family: 'Times New Roman', Times, serif;">
+                        <input type="email" name="email" placeholder=" Email" style="box-shadow: 0 0 0 0;outline: 0;color: rgb(105, 99, 99); font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;">
                     </label>
                     <label for="" class="label-input icon-modify">
                         <i class="fas fa-lock"></i>
-                        <input type="password" name="senha" placeholder=" Senha" style="box-shadow: 0 0 0 0;outline: 0;color: rgb(105, 99, 99); font-family: 'Times New Roman', Times, serif;">
+                        <input type="password" name="senha" placeholder=" Senha" style="box-shadow: 0 0 0 0;outline: 0;color: rgb(105, 99, 99); font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;">
                     </label>
                     
                     <button class="btn2" style="transition: 0.25s;" onclick="return ValidForm1()"> Inscreva-se </button>

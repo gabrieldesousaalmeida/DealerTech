@@ -14,6 +14,9 @@ include_once("conexao.php");
     
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="http://localhost/DealerTech/css/styles.css" rel="stylesheet" />
+        <link href="http://localhost/DealerTech/css/unemstyle2.css" rel="stylesheet">
         <!--bot css-->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <!--bot css-->
@@ -102,61 +105,6 @@ include_once("conexao.php");
             filter: grayscale(0%);
             filter: gray;
             display:block;        
-}
-        body{
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center; 
-    background: lavender;
-    }
-ul{
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-ul li{
-    list-style: none;
-    margin: 0 20px;
-    transition: 2s;
-}
-ul li a {
-    display: block;
-    position: relative;
-    text-decoration: none;
-    padding: 5px;
-    font-size: 13px;
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    color: #fff;
-    text-transform: uppercase;
-    transition: .5s;
-}
-ls{
-    display: block;
-    position: relative;
-    text-decoration: none;
-    padding: 5px;
-    font-size: 20px;
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    color: #fff;
-
-}
-ul:hover li a{
-    transform: scale(1.0);
-    opacity: .5;
-    filter: blur(1px);
-}
-
-ul li a:hover{
-    transform: scale(1.3);
-    opacity: 1;
-    filter: blur(0);
-}
-.menu{  
-    float: right;
-    width:100%;
-    height: 35px;
-    
 }
 /*DIV CAR*/
 .car{
@@ -272,40 +220,28 @@ span{
         }
 		?>	 
         
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #800000;">
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/index.php" style="background-color: #fff; border-radius:5px; color: #800000;"> <i class="fas fa-home"> </i> Home <span class="sr-only">(current)</span> </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/comprar.php"> <i class="fas fa-dollar-sign"> </i> Comprar</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/carros.php"> <i class="fas fa-car"></i> Carros</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/contatos.php"> <i class="fas fa-phone-alt"></i> Contatos</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/sobre.php"> <i class="fas fa-clipboard"></i> Sobre Nós</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/sobre.php"> <i class="fas fa-question-circle"></i></i> Ajuda</a>
-                </li>
-              </ul>
-              <img src="Imagens/logof2.jpg" style="height: 40px;border-radius: 10px;">
-              <form class="form-inline my-2 my-lg-0">
-              </form>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" style="box-shadow: gray 0px 3px 9px; background-color: white;;">
+            <div class="container px-4 px-lg-5">
+                 <img src="http://localhost/DealerTech/imagens/logored.png" style="height: 60px;"/>
+                <a class="navbar-brand" href="#page-top" style="color:red;">Saga Veículos de Luxo</a>
+                
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/comprar.php"><i class="fas fa-caret-right"></i> Comprar</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/carros.php">Carros</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/contatos.php">Contatos</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/sobre.php">Sobre Nós</a></li>
+                    </ul>
+                </div>
             </div>
-          </nav>
-    </div> <br> 
-
+        </nav>
+      <br><br><br>
       <!--Conteúdo-->
 			<center>		
 				<?php
@@ -329,22 +265,22 @@ span{
           while ($rows_categorias = mysqli_fetch_array($resultado_categorias)) {            
           ?>
             <div class="car">
-              <h2> <?php echo $rows_cursos['modelo'];?></h2> 
-              <h4> xdrive40i m sport </h4>
-              <br> 
-              <?php echo "<img src='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_categorias['imagem']."' style='height: 130px;'>";?> 
-              <h5> R$ 662.950 <br><p style="color: gray; font-size: 20px;"> 0Km - Ano: 2020</p></h5>
-              <img src="http://localhost/DealerTech/Imagens/bmwx6/logo.png" style="height: 60px;"/>
-                          
-              <p class="botao" id="centro" style="margin-top:20px">
-              <?php echo "<a href='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_cursos['modelo'].".php"."'style='font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;'><br> <b> <i class='fas fa-eye'></i> Ver Carro </a>";?>       
-              </p>
-            </div>	
+                        <h2> <?php echo $rows_cursos['modelo'];?></h2> 
+                        <h4> <?php echo $rows_cursos['versao'];?> </h4>
+                        <br> 
+                        <?php echo "<img src='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_categorias['imagem']."' style='height: 130px;'>";?> 
+                        <h5> R$ <?php echo $rows_cursos['preço'];?><br><p style="color: gray; font-size: 20px;"> <?php echo $rows_cursos['qm'];?>Km - Ano: <?php echo $rows_cursos['ano'];?></p></h5>
+                        <?php echo "<img src='http://localhost/DealerTech/Imagens/Marcas/".$rows_cursos['marca'].".png"."' style='height: 60px;'>";?>
+                        
+                        <p class="botao" id="centro" style="margin-top:20px">
+                        <?php echo "<a href='http://localhost/DealerTech/veiculos/".$rows_cursos['marca']."/".$rows_cursos['modelo']."/".$rows_cursos['modelo'].".php"."'style='font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;'><br> <b> <i class='fas fa-eye'></i> Ver Carro </a>";?>       
+                        </p>
+                    </div>	
 				<?php
           }
 				}
 				?>
-				<br>
+				<br><br>
 				<?php
 				//Paginação - Somar a quantidade de usuários
 				$result_pg = "SELECT COUNT(id) AS num_result FROM veiculos";
@@ -356,25 +292,38 @@ span{
 				
 				//Limitar os link antes depois
 				$max_links = 3;
-				echo "<a href='gerenciar_clientes.php?pagina=1'>Primeira</a> ";
-				
-				for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
-					if($pag_ant >= 1){
-						echo "<a href='gerenciar_clientes.php?pagina=$pag_ant'>$pag_ant</a> ";
-					}
-				}
-					
-				echo "$pagina ";
-				
-				for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
-					if($pag_dep <= $quantidade_pg){
-						echo "<a href='gerenciar_clientes.php?pagina=$pag_dep'>$pag_dep</a> ";
-					}
-				}
-				
-				echo "<a href='gerenciar_clientes.php?pagina=$quantidade_pg'>Ultima</a>";
-				
 				?>
+        <nav aria-label="Page navigation example" style="margin-left:600px;">
+                    <ul class="pagination">
+                        <li class="page-item" >
+                        <a class="page-link" href="carros.php?pagina=1" aria-label="Previous" style="background-color:red; color:white;">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        </li>
+                        <?php
+                        for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
+                            if($pag_ant >= 1){
+                                echo "<li class='page-item'><a class='page-link' href='carros.php?pagina=$pag_ant'>$pag_ant</a></li> ";
+                            }
+                        }
+                        ?>
+                        <li class="page-item"><a class="page-link" href="" style='color:red;'><?php echo "$pagina ";?></a></li>
+                        <?php
+                        for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
+                            if($pag_dep <= $quantidade_pg){
+                                echo "<li class='page-item'><a class='page-link' href='carros.php?pagina=$pag_dep'>$pag_dep</a></li> ";
+                            }
+                        }
+                        ?>
+                        <li class="page-item">
+                        <a class="page-link" href='<?php echo "carros.php?pagina=".$quantidade_pg; ?>' aria-label="Next" style="background-color:red; color:white;">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        </li>
+                    </ul>
+                </nav>
 			</center>
 
     <script src="https://kit.fontawesome.com/795454a62b.js" crossorigin="anonymous"></script>

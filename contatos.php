@@ -10,8 +10,11 @@ session_start();
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link href="css/unemstyle.css" rel="stylesheet">	
+    
         <link href="css/contatostyle.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/unemstyle2.css" rel="stylesheet">
         <style>
         .cent{
         margin-top: 150px;
@@ -79,72 +82,35 @@ session_start();
         </style>
     </head>	
     <body>	
-    <div class="menu">
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#800000;">
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/index.php"> <i class="fas fa-home"> </i> Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/comprar.php"> <i class="fas fa-dollar-sign"> </i> Comprar</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/carros.php"> <i class="fas fa-car"></i> Carros</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/contatos.php"> <i class="fas fa-phone-alt"></i> Contatos</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="http://localhost/DealerTech/sobre.php"> <i class="fas fa-clipboard"></i> Sobre Nós</a>
-                </li>
-                <li class="nav-item">
-                </li>
-                <?php
-                if(isset($_SESSION['usuarioNiveisAcessoId'])){
-                $tipo = $_SESSION['usuarioNiveisAcessoId'];
-                }else{
-                    $tipo="";
-                }
-                if($tipo=="cliente"){
-                ?>		
-                    <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost/DealerTech/php/login_usuario/sair.php" title="Sair" style="font-size: 25px;"> <i class="fas fa-sign-out-alt"></i></a>
-                    </li>	
-                <?php
-                }else if($tipo=="admin"){
-                ?>	
-                    <li class="nav-item active"> 
-                        <a class="nav-link" href="http://localhost/DealerTech/admin/admin.php" title="Opções Administrativas" style="font-size: 25px;"> <i class="fas fa-tools"></i> </a> 
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost/DealerTech/php/login_usuario/sair.php" title="Sair" style="font-size: 25px;"><i class="fas fa-sign-out-alt"></i></a>
-                    </li>	
-                <?php	
-                }else{
-                ?>
-                    <li class="nav-item active"> 
-                        <a class="nav-link" href="http://localhost/DealerTech/login.php" title="Fazer Login" style="font-size: 25px;"> <i class="fas fa-user-edit"></i></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost/DealerTech/cadastro.php" title="Fazer Cadastro" style="font-size: 25px;"><i class="fas fa-cog"></i></a>
-                    </li>	
-                <?php
-                }
-                ?>
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-              </form>
+    <?php
+        if(isset($_SESSION['usuarioNiveisAcessoId'])){
+            $tipo = $_SESSION['usuarioNiveisAcessoId'];
+        }else{
+            $tipo="";
+        }
+		?>
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" style="box-shadow: gray 0px 3px 9px; background-color: white;;">
+            <div class="container px-4 px-lg-5">
+                 <img src="imagens/logored.png" style="height: 60px;"/>
+                <a class="navbar-brand" href="#page-top" style="color:red;">Saga Veículos de Luxo</a>
+                
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/comprar.php">Comprar</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/carros.php"><i class="fas fa-caret-right"></i> Carros</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/contatos.php">Contatos</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: red;" href="http://localhost/DealerTech/sobre.php">Sobre Nós</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
-    </div>
     <center>
-          
+        
         <div style="margin-top:2rem;">
          <h2 style="font-size: 3rem;"> Fale Conosco </h2>
          <p class="botao">
